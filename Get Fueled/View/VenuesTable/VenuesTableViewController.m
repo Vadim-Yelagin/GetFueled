@@ -10,6 +10,7 @@
 #import "VenueDetailsTableViewController.h"
 #import "VenueDetailsTableViewModel.h"
 #import "VenuesTableViewController.h"
+#import <ETRUtils/ETRUtils.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
 
 @implementation VenuesTableViewController
@@ -19,7 +20,10 @@
     [super awakeFromNib];
     self.reuseIdentifierMatching.defaultReuseIdentifier = @"VenueCell";
     self.viewModel = [[VenuesTableViewModel alloc] init];
-    [self.viewModel.refreshCommand execute:nil];
+    RACCommand *refreshCommand = self.viewModel.refreshCommand;
+    [self rac_liftSelector:@selector(etr_alertError:)
+               withSignals:refreshCommand.errors, nil];
+    [refreshCommand execute:nil];
 }
 
 - (void)viewDidLoad
