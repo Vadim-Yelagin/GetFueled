@@ -100,6 +100,9 @@
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="layoutManager.allowsNonContiguousLayout" value="NO"/>
                                             </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <outlet property="delegate" destination="4RM-Sg-g91" id="iR0-0S-ysW"/>
+                                            </connections>
                                         </textView>
                                     </subviews>
                                     <constraints>
@@ -111,6 +114,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="textView" destination="9U4-U3-rOe" id="UXY-sa-jku"/>
+                                    <outlet property="textViewHeight" destination="Rie-if-5nv" id="zyc-zG-IPe"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
