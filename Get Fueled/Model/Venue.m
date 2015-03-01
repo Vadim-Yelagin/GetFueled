@@ -14,5 +14,6 @@
 @dynamic identifier;
 @dynamic name;
 @dynamic actual;
+@dynamic distance;
 
 @end
