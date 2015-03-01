@@ -25,6 +25,8 @@
 		E86B96511AA3563400CDE27F /* VenueDetailsOverviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E86B96501AA3563400CDE27F /* VenueDetailsOverviewCell.m */; };
 		E86B96541AA3566100CDE27F /* VenueDetailsTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E86B96531AA3566100CDE27F /* VenueDetailsTableViewModel.m */; };
 		E86B96571AA3568100CDE27F /* VenueDetailsOverviewCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E86B96561AA3568100CDE27F /* VenueDetailsOverviewCellModel.m */; };
+		E86B96601AA35BCE00CDE27F /* TextViewCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E86B965F1AA35BCE00CDE27F /* TextViewCellModel.m */; };
+		E86B96631AA35BDE00CDE27F /* TextViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E86B96621AA35BDE00CDE27F /* TextViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +64,10 @@
 		E86B96531AA3566100CDE27F /* VenueDetailsTableViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueDetailsTableViewModel.m; sourceTree = "<group>"; };
 		E86B96551AA3568100CDE27F /* VenueDetailsOverviewCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueDetailsOverviewCellModel.h; sourceTree = "<group>"; };
 		E86B96561AA3568100CDE27F /* VenueDetailsOverviewCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueDetailsOverviewCellModel.m; sourceTree = "<group>"; };
+		E86B965E1AA35BCE00CDE27F /* TextViewCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewCellModel.h; sourceTree = "<group>"; };
+		E86B965F1AA35BCE00CDE27F /* TextViewCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewCellModel.m; sourceTree = "<group>"; };
+		E86B96611AA35BDE00CDE27F /* TextViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewCell.h; sourceTree = "<group>"; };
+		E86B96621AA35BDE00CDE27F /* TextViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +198,10 @@
 				E86B964D1AA3561400CDE27F /* VenueDetailsTableViewController.m */,
 				E86B96521AA3566100CDE27F /* VenueDetailsTableViewModel.h */,
 				E86B96531AA3566100CDE27F /* VenueDetailsTableViewModel.m */,
+				E86B965E1AA35BCE00CDE27F /* TextViewCellModel.h */,
+				E86B965F1AA35BCE00CDE27F /* TextViewCellModel.m */,
+				E86B96611AA35BDE00CDE27F /* TextViewCell.h */,
+				E86B96621AA35BDE00CDE27F /* TextViewCell.m */,
 			);
 			path = VenueDetails;
 			sourceTree = "<group>";
@@ -310,6 +320,8 @@
 				E86B96541AA3566100CDE27F /* VenueDetailsTableViewModel.m in Sources */,
 				E86B96571AA3568100CDE27F /* VenueDetailsOverviewCellModel.m in Sources */,
 				E86B96341AA3132200CDE27F /* Venue.m in Sources */,
+				E86B96631AA35BDE00CDE27F /* TextViewCell.m in Sources */,
+				E86B96601AA35BCE00CDE27F /* TextViewCellModel.m in Sources */,
 				E86B96491AA31F0D00CDE27F /* VenuesTableViewModel.m in Sources */,
 				E86B963E1AA31BD900CDE27F /* FoursquareResponseItem.m in Sources */,
 				E86B964E1AA3561400CDE27F /* VenueDetailsTableViewController.m in Sources */,

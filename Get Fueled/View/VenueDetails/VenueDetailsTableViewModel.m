@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 Fueled. All rights reserved.
 //
 
+#import "TextViewCellModel.h"
 #import "VenueDetailsOverviewCellModel.h"
 #import "VenueDetailsTableViewModel.h"
 
@@ -13,8 +14,9 @@
 
 - (instancetype)initWithVenue:(Venue *)venue
 {
+    TextViewCellModel *newReviewTextView = [[TextViewCellModel alloc] init];
     VenueDetailsOverviewCellModel *overview = [[VenueDetailsOverviewCellModel alloc] initWithVenue:venue];
-    NSArray *items = @[overview];
+    NSArray *items = @[overview, newReviewTextView];
     self = [super initWithSections:@[items]];
     if (self) {
         _venue = venue;
