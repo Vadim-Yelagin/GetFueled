@@ -28,6 +28,14 @@
     RACSignal *modelText = RACObserve(self, viewModel.text);
     [self rac_liftSelector:@selector(setText:)
                withSignals:modelText, nil];
+    RACSignal *endEditing = [RACObserve(self, viewModel.endEditingSignal) switchToLatest];
+    [self rac_liftSelector:@selector(endTextViewEditing:)
+               withSignals:endEditing, nil];
+}
+
+- (void)endTextViewEditing:(id)dummy
+{
+    [self.textView resignFirstResponder];
 }
 
 - (void)setText:(NSString *)text

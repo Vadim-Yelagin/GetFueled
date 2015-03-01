@@ -55,6 +55,7 @@
 {
     id item = [self itemAtIndexPath:indexPath];
     if (item == self.addReviewItem) {
+        [self.aNewReviewTextView endEditing];
         self.aNewReviewTextView.text = @"";
         if (completion)
             completion();

@@ -8,10 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+@class RACSignal;
+
 @interface TextViewCellModel : NSObject
 
 @property (nonatomic, readonly, copy) NSString *reuseIdentifier;
 @property (nonatomic, copy) NSString *text;
 @property (nonatomic, copy) NSString *placeholder;
+@property (nonatomic, readonly, strong) RACSignal *endEditingSignal;
+
+- (void)endEditing;
 
 @end

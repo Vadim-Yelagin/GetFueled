@@ -7,8 +7,17 @@
 //
 
 #import "TextViewCellModel.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
+
+@interface TextViewCellModel ()
+
+@property (nonatomic, readonly, strong) RACSubject *endEditingSubject;
+
+@end
 
 @implementation TextViewCellModel
+
+@synthesize endEditingSubject = _endEditingSubject;
 
 - (NSString *)reuseIdentifier
 {
@@ -19,6 +28,23 @@
 {
     _text = [text copy];
     NSLog(@"SET %@", text);
+}
+
+- (RACSignal *)endEditingSignal
+{
+    return self.endEditingSubject;
+}
+- (RACSubject *)endEditingSubject
+{
+    if (!_endEditingSubject) {
+        _endEditingSubject = [RACSubject subject];
+    }
+    return _endEditingSubject;
+}
+
+- (void)endEditing
+{
+    [self.endEditingSubject sendNext:@YES];
 }
 
 @end
