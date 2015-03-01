@@ -13,6 +13,7 @@
 
 @interface TextViewCell () <UITextViewDelegate>
 
+@property (nonatomic, strong) IBOutlet UILabel *placeholderLabel;
 @property (nonatomic, strong) IBOutlet UITextView *textView;
 @property (nonatomic, strong) IBOutlet NSLayoutConstraint *textViewHeight;
 
@@ -23,6 +24,7 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
+    RAC(self.placeholderLabel, text) = RACObserve(self, viewModel.placeholder);
     RACSignal *modelText = RACObserve(self, viewModel.text);
     [self rac_liftSelector:@selector(setText:)
                withSignals:modelText, nil];
@@ -30,6 +32,7 @@
 
 - (void)setText:(NSString *)text
 {
+    self.placeholderLabel.hidden = (text.length > 0);
     if ([text isEqual:self.textView.text])
         return;
     self.textView.text = text;

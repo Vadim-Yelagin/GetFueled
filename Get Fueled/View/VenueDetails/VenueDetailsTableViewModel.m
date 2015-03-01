@@ -27,6 +27,7 @@
     VenueDetailsOverviewCellModel *overview = [[VenueDetailsOverviewCellModel alloc] initWithVenue:venue];
 
     TextViewCellModel *newReviewTextView = [[TextViewCellModel alloc] init];
+    newReviewTextView.placeholder = @"Write a review";
     ETRStaticCellModel *addReview = [[ETRStaticCellModel alloc] initWithReuseIdentifier:@"AddReviewCell"];
     
     ETRStaticCollectionModel *header = [[ETRStaticCollectionModel alloc] initWithSections:@[@[overview, newReviewTextView]]];

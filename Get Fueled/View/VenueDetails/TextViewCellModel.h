@@ -12,5 +12,6 @@
 
 @property (nonatomic, readonly, copy) NSString *reuseIdentifier;
 @property (nonatomic, copy) NSString *text;
+@property (nonatomic, copy) NSString *placeholder;
 
 @end

@@ -104,15 +104,24 @@
                                                 <outlet property="delegate" destination="4RM-Sg-g91" id="iR0-0S-ysW"/>
                                             </connections>
                                         </textView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DpY-3A-E12">
+                                            <rect key="frame" x="15" y="9" width="100" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="9U4-U3-rOe" firstAttribute="top" secondItem="VSc-9q-ekh" secondAttribute="top" id="1Br-4A-L3u"/>
+                                        <constraint firstItem="DpY-3A-E12" firstAttribute="top" secondItem="VSc-9q-ekh" secondAttribute="top" constant="9" id="E0c-R1-Xe1"/>
                                         <constraint firstAttribute="trailing" secondItem="9U4-U3-rOe" secondAttribute="trailing" id="eXU-03-x7q"/>
                                         <constraint firstAttribute="bottom" secondItem="9U4-U3-rOe" secondAttribute="bottom" priority="200" id="p0l-jh-D6u"/>
                                         <constraint firstItem="9U4-U3-rOe" firstAttribute="leading" secondItem="VSc-9q-ekh" secondAttribute="leading" id="rXN-oY-lR8"/>
+                                        <constraint firstItem="DpY-3A-E12" firstAttribute="leading" secondItem="VSc-9q-ekh" secondAttribute="leading" constant="15" id="s9o-28-8Mi"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="placeholderLabel" destination="DpY-3A-E12" id="Ltg-Eg-crL"/>
                                     <outlet property="textView" destination="9U4-U3-rOe" id="UXY-sa-jku"/>
                                     <outlet property="textViewHeight" destination="Rie-if-5nv" id="zyc-zG-IPe"/>
                                 </connections>
