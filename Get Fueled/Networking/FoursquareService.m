@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Fueled. All rights reserved.
 //
 
+#import "FoursquareResponseGroup.h"
+#import "FoursquareResponseItem.h"
 #import "FoursquareService.h"
 #import <CoreData/CoreData.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
@@ -21,6 +23,8 @@ static NSString * const FoursquareClientSecret = @"EQLCFBSLOWS243E1MCVKKMFYB0VJV
 @property (strong, nonatomic) RKObjectManager *objectManager;
 @property (strong, nonatomic) RKManagedObjectStore *managedObjectStore;
 
+@property (strong, nonatomic) RKObjectMapping *groupMapping;
+@property (strong, nonatomic) RKObjectMapping *itemMapping;
 @property (strong, nonatomic) RKEntityMapping *venueMapping;
 
 @end
@@ -142,15 +146,33 @@ static NSString * const FoursquareClientSecret = @"EQLCFBSLOWS243E1MCVKKMFYB0VJV
 - (void)addExploreResponseDescriptor
 {
     RKResponseDescriptor *d;
-    d = [RKResponseDescriptor responseDescriptorWithMapping:self.venueMapping
+    d = [RKResponseDescriptor responseDescriptorWithMapping:self.groupMapping
                                                      method:RKRequestMethodGET
                                                 pathPattern:@"venues/explore"
-                                                    keyPath:@"response.groups.items.venue"
+                                                    keyPath:@"response.groups"
                                                 statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     [self.objectManager addResponseDescriptor:d];
 }
 
 #pragma mark Entity Mappings
+
+- (RKObjectMapping *)groupMapping
+{
+    if (_groupMapping)
+        return _groupMapping;
+    _groupMapping = [RKObjectMapping mappingForClass:[FoursquareResponseGroup class]];
+    [_groupMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"items" toKeyPath:@"items" withMapping:self.itemMapping]];
+    return _groupMapping;
+}
+
+- (RKObjectMapping *)itemMapping
+{
+    if (_itemMapping)
+        return _itemMapping;
+    _itemMapping = [RKObjectMapping mappingForClass:[FoursquareResponseItem class]];
+    [_itemMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"venue" toKeyPath:@"venue" withMapping:self.venueMapping]];
+    return _itemMapping;
+}
 
 - (RKEntityMapping *)venueMapping
 {
