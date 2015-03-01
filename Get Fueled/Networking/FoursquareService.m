@@ -10,6 +10,7 @@
 #import "FoursquareResponseItem.h"
 #import "FoursquareService.h"
 #import "Venue.h"
+#import <ETRUtils/ETRUtils.h>
 #import <CoreData/CoreData.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import <RestKit/RestKit.h>
@@ -106,6 +107,24 @@ static NSString * const FoursquareClientSecret = @"EQLCFBSLOWS243E1MCVKKMFYB0VJV
         NSLog(@"Error saving changes to persistent store: %@", error);
 }
 
+- (void)markActualVenuesWithGroups:(NSArray *)groups
+{
+    NSArray *items = [groups etr_flatMap:^NSArray *(FoursquareResponseGroup *obj) {
+        return obj.items;
+    }];
+    NSArray *venueIDs = [items etr_map:^id(FoursquareResponseItem *obj) {
+        return obj.venue.identifier;
+    }];
+    NSSet *venueIDSet = [NSSet setWithArray:venueIDs];
+    NSFetchRequest* request = [NSFetchRequest fetchRequestWithEntityName:@"Venue"];
+    NSArray *allObjects = [[self mainMOC] executeFetchRequest:request
+                                                        error:nil];
+    for (Venue* object in allObjects) {
+        object.actual = [venueIDSet containsObject:object.identifier];
+    }
+    [self saveChanges];
+}
+
 #pragma mark Requests
 
 - (RACSignal *)exploreWithLatitude:(double)latitude
@@ -129,12 +148,7 @@ static NSString * const FoursquareClientSecret = @"EQLCFBSLOWS243E1MCVKKMFYB0VJV
                                                    RKMappingResult *mappingResult)
          {
              @strongify(self);
-             NSFetchRequest* request = [NSFetchRequest fetchRequestWithEntityName:@"Venue"];
-             NSArray *allObjects = [[self mainMOC] executeFetchRequest:request error:nil];
-             for (Venue* object in allObjects) {
-                 object.actual = [mappingResult.set containsObject:object];
-             }
-             [self saveChanges];
+             [self markActualVenuesWithGroups:mappingResult.array];
              [subscriber sendNext:mappingResult.array];
              [subscriber sendCompleted];
          } failure:^(RKObjectRequestOperation *operation,
