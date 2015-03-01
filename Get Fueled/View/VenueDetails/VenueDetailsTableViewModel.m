@@ -44,6 +44,7 @@
     request.predicate = [NSPredicate predicateWithFormat:@"venue == %@", venue];
     request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"dateCreated" ascending:NO]];
     ETRFetchedResultsCollectionModel *reviews = [[ETRFetchedResultsCollectionModel alloc] initWithFetchRequest:request managedObjectContext:moc sectionNameKeyPath:nil cacheName:nil];
+    reviews.allowDelete = YES;
     
     self = [super initWithCollections:@[header, addReviewHiding, reviews]];
     if (self) {
@@ -83,6 +84,13 @@
         if (completion)
             completion();
     }
+}
+
+- (void)deleteItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    [super deleteItemAtIndexPath:indexPath];
+    // standard delete for reviews does not save changes
+    [[FoursquareService sharedService] saveChanges];
 }
 
 @end
