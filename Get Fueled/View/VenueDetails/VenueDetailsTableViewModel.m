@@ -6,7 +6,10 @@
 //  Copyright (c) 2015 Fueled. All rights reserved.
 //
 
+#import "FoursquareService.h"
+#import "Review.h"
 #import "TextViewCellModel.h"
+#import "Venue.h"
 #import "VenueDetailsOverviewCellModel.h"
 #import "VenueDetailsTableViewModel.h"
 #import <ETRCollectionModel/ETRHidingCollectionModel.h>
@@ -50,11 +53,24 @@
     return self;
 }
 
+- (void)addReviewWithText:(NSString *)text
+{
+    NSManagedObjectContext *moc = self.venue.managedObjectContext;
+    if (!moc)
+        return;
+    Review *review = [NSEntityDescription insertNewObjectForEntityForName:@"Review" inManagedObjectContext:moc];
+    review.dateCreated = [NSDate date];
+    review.text = text;
+    review.venue = self.venue;
+    [[FoursquareService sharedService] saveChanges];
+}
+
 - (void)didSelectItemAtIndexPath:(NSIndexPath *)indexPath
                       completion:(void (^)(void))completion
 {
     id item = [self itemAtIndexPath:indexPath];
     if (item == self.addReviewItem) {
+        [self addReviewWithText:self.aNewReviewTextView.text];
         [self.aNewReviewTextView endEditing];
         self.aNewReviewTextView.text = @"";
         if (completion)
