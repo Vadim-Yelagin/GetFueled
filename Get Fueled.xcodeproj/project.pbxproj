@@ -13,18 +13,7 @@
 		E86B96141AA3097600CDE27F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E86B96121AA3097600CDE27F /* Main.storyboard */; };
 		E86B96161AA3097600CDE27F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E86B96151AA3097600CDE27F /* Images.xcassets */; };
 		E86B96191AA3097600CDE27F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E86B96171AA3097600CDE27F /* LaunchScreen.xib */; };
-		E86B96251AA3097600CDE27F /* Get_FueledTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E86B96241AA3097600CDE27F /* Get_FueledTests.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		E86B961F1AA3097600CDE27F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E86B95FD1AA3097600CDE27F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E86B96041AA3097600CDE27F;
-			remoteInfo = "Get Fueled";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		E86B96051AA3097600CDE27F /* Get Fueled.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Get Fueled.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -37,20 +26,10 @@
 		E86B96131AA3097600CDE27F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E86B96151AA3097600CDE27F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E86B96181AA3097600CDE27F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		E86B961E1AA3097600CDE27F /* Get FueledTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Get FueledTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E86B96231AA3097600CDE27F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E86B96241AA3097600CDE27F /* Get_FueledTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Get_FueledTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		E86B96021AA3097600CDE27F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E86B961B1AA3097600CDE27F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -64,7 +43,6 @@
 			isa = PBXGroup;
 			children = (
 				E86B96071AA3097600CDE27F /* Get Fueled */,
-				E86B96211AA3097600CDE27F /* Get FueledTests */,
 				E86B96061AA3097600CDE27F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -73,7 +51,6 @@
 			isa = PBXGroup;
 			children = (
 				E86B96051AA3097600CDE27F /* Get Fueled.app */,
-				E86B961E1AA3097600CDE27F /* Get FueledTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -102,23 +79,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		E86B96211AA3097600CDE27F /* Get FueledTests */ = {
-			isa = PBXGroup;
-			children = (
-				E86B96241AA3097600CDE27F /* Get_FueledTests.m */,
-				E86B96221AA3097600CDE27F /* Supporting Files */,
-			);
-			path = "Get FueledTests";
-			sourceTree = "<group>";
-		};
-		E86B96221AA3097600CDE27F /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				E86B96231AA3097600CDE27F /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,24 +99,6 @@
 			productReference = E86B96051AA3097600CDE27F /* Get Fueled.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E86B961D1AA3097600CDE27F /* Get FueledTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E86B962B1AA3097600CDE27F /* Build configuration list for PBXNativeTarget "Get FueledTests" */;
-			buildPhases = (
-				E86B961A1AA3097600CDE27F /* Sources */,
-				E86B961B1AA3097600CDE27F /* Frameworks */,
-				E86B961C1AA3097600CDE27F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E86B96201AA3097600CDE27F /* PBXTargetDependency */,
-			);
-			name = "Get FueledTests";
-			productName = "Get FueledTests";
-			productReference = E86B961E1AA3097600CDE27F /* Get FueledTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -168,10 +110,6 @@
 				TargetAttributes = {
 					E86B96041AA3097600CDE27F = {
 						CreatedOnToolsVersion = 6.1.1;
-					};
-					E86B961D1AA3097600CDE27F = {
-						CreatedOnToolsVersion = 6.1.1;
-						TestTargetID = E86B96041AA3097600CDE27F;
 					};
 				};
 			};
@@ -189,7 +127,6 @@
 			projectRoot = "";
 			targets = (
 				E86B96041AA3097600CDE27F /* Get Fueled */,
-				E86B961D1AA3097600CDE27F /* Get FueledTests */,
 			);
 		};
 /* End PBXProject section */
@@ -202,13 +139,6 @@
 				E86B96141AA3097600CDE27F /* Main.storyboard in Resources */,
 				E86B96191AA3097600CDE27F /* LaunchScreen.xib in Resources */,
 				E86B96161AA3097600CDE27F /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E86B961C1AA3097600CDE27F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,23 +155,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E86B961A1AA3097600CDE27F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E86B96251AA3097600CDE27F /* Get_FueledTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		E86B96201AA3097600CDE27F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E86B96041AA3097600CDE27F /* Get Fueled */;
-			targetProxy = E86B961F1AA3097600CDE27F /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E86B96121AA3097600CDE27F /* Main.storyboard */ = {
@@ -297,7 +211,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -332,7 +246,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -343,6 +257,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "Get Fueled/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -353,43 +268,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "Get Fueled/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		E86B962C1AA3097600CDE27F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Get FueledTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Get Fueled.app/Get Fueled";
-			};
-			name = Debug;
-		};
-		E86B962D1AA3097600CDE27F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Get FueledTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Get Fueled.app/Get Fueled";
 			};
 			name = Release;
 		};
@@ -410,14 +292,6 @@
 			buildConfigurations = (
 				E86B96291AA3097600CDE27F /* Debug */,
 				E86B962A1AA3097600CDE27F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-		E86B962B1AA3097600CDE27F /* Build configuration list for PBXNativeTarget "Get FueledTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E86B962C1AA3097600CDE27F /* Debug */,
-				E86B962D1AA3097600CDE27F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
