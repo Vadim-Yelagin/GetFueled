@@ -7,6 +7,7 @@
 //
 
 #import "VenuesTableViewController.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
 
 @implementation VenuesTableViewController
 
@@ -15,6 +16,12 @@
     [super awakeFromNib];
     self.reuseIdentifierMatching.defaultReuseIdentifier = @"VenueCell";
     self.viewModel = [[VenuesTableViewModel alloc] init];
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.refreshControl.rac_command = self.viewModel.refreshCommand;
 }
 
 @end

@@ -8,6 +8,10 @@
 
 #import "ETRFetchedResultsCollectionModel.h"
 
+@class RACCommand;
+
 @interface VenuesTableViewModel : ETRFetchedResultsCollectionModel
+
+@property (nonatomic, readonly, strong) RACCommand *refreshCommand;
 
 @end
