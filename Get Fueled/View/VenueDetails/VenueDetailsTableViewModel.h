@@ -6,11 +6,11 @@
 //  Copyright (c) 2015 Fueled. All rights reserved.
 //
 
-#import "ETRStaticCollectionModel.h"
+#import <ETRCollectionModel/ETROuterUnionCollectionModel.h>
 
 @class Venue;
 
-@interface VenueDetailsTableViewModel : ETRStaticCollectionModel
+@interface VenueDetailsTableViewModel : ETROuterUnionCollectionModel
 
 @property (nonatomic, readonly, strong) Venue* venue;
 
