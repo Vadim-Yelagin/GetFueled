@@ -62,7 +62,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="290" translatesAutoresizingMaskIntoConstraints="NO" id="0na-Oq-NOj">
-                                            <rect key="frame" x="15" y="15" width="290" height="119"/>
+                                            <rect key="frame" x="15" y="15" width="290" height="26"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -72,7 +72,7 @@
                                         <constraint firstItem="0na-Oq-NOj" firstAttribute="top" secondItem="Aei-Ez-0xP" secondAttribute="top" constant="15" id="Y3C-V3-rsB"/>
                                         <constraint firstItem="0na-Oq-NOj" firstAttribute="leading" secondItem="Aei-Ez-0xP" secondAttribute="leading" constant="15" id="cqf-wJ-BEZ"/>
                                         <constraint firstAttribute="trailing" secondItem="0na-Oq-NOj" secondAttribute="trailing" constant="15" id="iEA-Xx-LNz"/>
-                                        <constraint firstAttribute="bottom" secondItem="0na-Oq-NOj" secondAttribute="bottom" constant="15" id="mB1-j0-NgL"/>
+                                        <constraint firstAttribute="bottom" secondItem="0na-Oq-NOj" secondAttribute="bottom" priority="200" constant="15" id="mB1-j0-NgL"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
