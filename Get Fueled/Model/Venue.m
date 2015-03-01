@@ -13,5 +13,6 @@
 
 @dynamic identifier;
 @dynamic name;
+@dynamic actual;
 
 @end

@@ -16,6 +16,7 @@
 {
     NSManagedObjectContext *moc = [FoursquareService sharedService].mainMOC;
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Venue"];
+    request.predicate = [NSPredicate predicateWithFormat:@"actual == YES"];
     // TODO use more appropriate sort
     request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
     return [self initWithFetchRequest:request

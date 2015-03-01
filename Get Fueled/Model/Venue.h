@@ -14,5 +14,6 @@
 
 @property (nonatomic, retain) NSString * identifier;
 @property (nonatomic, retain) NSString * name;
+@property (nonatomic) BOOL actual;
 
 @end

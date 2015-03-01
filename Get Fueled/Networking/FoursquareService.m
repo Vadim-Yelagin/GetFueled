@@ -9,6 +9,7 @@
 #import "FoursquareResponseGroup.h"
 #import "FoursquareResponseItem.h"
 #import "FoursquareService.h"
+#import "Venue.h"
 #import <CoreData/CoreData.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import <RestKit/RestKit.h>
@@ -97,6 +98,14 @@ static NSString * const FoursquareClientSecret = @"EQLCFBSLOWS243E1MCVKKMFYB0VJV
     return self.managedObjectStore.mainQueueManagedObjectContext;
 }
 
+- (void)saveChanges
+{
+    NSError* error;
+    [self.managedObjectStore.mainQueueManagedObjectContext saveToPersistentStore:&error];
+    if (error)
+        NSLog(@"Error saving changes to persistent store: %@", error);
+}
+
 #pragma mark Requests
 
 - (RACSignal *)exploreWithLatitude:(double)latitude
@@ -119,6 +128,13 @@ static NSString * const FoursquareClientSecret = @"EQLCFBSLOWS243E1MCVKKMFYB0VJV
         [operation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation,
                                                    RKMappingResult *mappingResult)
          {
+             @strongify(self);
+             NSFetchRequest* request = [NSFetchRequest fetchRequestWithEntityName:@"Venue"];
+             NSArray *allObjects = [[self mainMOC] executeFetchRequest:request error:nil];
+             for (Venue* object in allObjects) {
+                 object.actual = [mappingResult.set containsObject:object];
+             }
+             [self saveChanges];
              [subscriber sendNext:mappingResult.array];
              [subscriber sendCompleted];
          } failure:^(RKObjectRequestOperation *operation,
