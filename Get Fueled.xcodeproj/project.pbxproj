@@ -29,6 +29,7 @@
 		E86B96661AA3702800CDE27F /* Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = E86B96651AA3702800CDE27F /* Venue.m */; };
 		E86B96691AA3702800CDE27F /* Review.m in Sources */ = {isa = PBXBuildFile; fileRef = E86B96681AA3702800CDE27F /* Review.m */; };
 		E86B966C1AA3718F00CDE27F /* ReviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E86B966B1AA3718F00CDE27F /* ReviewCell.m */; };
+		E86B966F1AA3745C00CDE27F /* ETRRACAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E86B966E1AA3745C00CDE27F /* ETRRACAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,8 @@
 		E86B96681AA3702800CDE27F /* Review.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Review.m; sourceTree = "<group>"; };
 		E86B966A1AA3718F00CDE27F /* ReviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReviewCell.h; sourceTree = "<group>"; };
 		E86B966B1AA3718F00CDE27F /* ReviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReviewCell.m; sourceTree = "<group>"; };
+		E86B966D1AA3745C00CDE27F /* ETRRACAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRRACAdditions.h; sourceTree = "<group>"; };
+		E86B966E1AA3745C00CDE27F /* ETRRACAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRRACAdditions.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +131,8 @@
 			children = (
 				E86B960C1AA3097600CDE27F /* AppDelegate.h */,
 				E86B960D1AA3097600CDE27F /* AppDelegate.m */,
+				E86B966D1AA3745C00CDE27F /* ETRRACAdditions.h */,
+				E86B966E1AA3745C00CDE27F /* ETRRACAdditions.m */,
 				E86B96151AA3097600CDE27F /* Images.xcassets */,
 				E86B962E1AA30C4200CDE27F /* Model */,
 				E86B96351AA3138800CDE27F /* Networking */,
@@ -333,6 +338,7 @@
 				E86B96571AA3568100CDE27F /* VenueDetailsOverviewCellModel.m in Sources */,
 				E86B96631AA35BDE00CDE27F /* TextViewCell.m in Sources */,
 				E86B96601AA35BCE00CDE27F /* TextViewCellModel.m in Sources */,
+				E86B966F1AA3745C00CDE27F /* ETRRACAdditions.m in Sources */,
 				E86B96491AA31F0D00CDE27F /* VenuesTableViewModel.m in Sources */,
 				E86B963E1AA31BD900CDE27F /* FoursquareResponseItem.m in Sources */,
 				E86B96691AA3702800CDE27F /* Review.m in Sources */,

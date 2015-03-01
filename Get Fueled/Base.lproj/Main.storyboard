@@ -145,26 +145,36 @@
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ReviewCell" rowHeight="46" id="baG-fA-1Dh" customClass="ReviewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ReviewCell" rowHeight="70" id="baG-fA-1Dh" customClass="ReviewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="baG-fA-1Dh" id="V4u-P4-7sP">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="290" translatesAutoresizingMaskIntoConstraints="NO" id="CGU-Lo-eXA">
-                                            <rect key="frame" x="15" y="12" width="290" height="21"/>
+                                            <rect key="frame" x="15" y="32" width="290" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="66:66 66.66.66" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="290" translatesAutoresizingMaskIntoConstraints="NO" id="WRe-6p-dS7">
+                                            <rect key="frame" x="15" y="12" width="290" height="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="CGU-Lo-eXA" firstAttribute="top" secondItem="V4u-P4-7sP" secondAttribute="top" constant="12" id="7Gw-W3-2oI"/>
+                                        <constraint firstItem="CGU-Lo-eXA" firstAttribute="top" secondItem="WRe-6p-dS7" secondAttribute="bottom" constant="4" id="28j-Zh-VOp"/>
+                                        <constraint firstItem="WRe-6p-dS7" firstAttribute="top" secondItem="V4u-P4-7sP" secondAttribute="top" constant="12" id="A3U-7d-enF"/>
                                         <constraint firstAttribute="trailing" secondItem="CGU-Lo-eXA" secondAttribute="trailing" constant="15" id="ER6-AX-6st"/>
                                         <constraint firstItem="CGU-Lo-eXA" firstAttribute="leading" secondItem="V4u-P4-7sP" secondAttribute="leading" constant="15" id="JSx-cH-Nol"/>
                                         <constraint firstAttribute="bottom" secondItem="CGU-Lo-eXA" secondAttribute="bottom" priority="200" constant="12" id="ZR4-vY-VMm"/>
+                                        <constraint firstItem="WRe-6p-dS7" firstAttribute="leading" secondItem="V4u-P4-7sP" secondAttribute="leading" constant="15" id="cKD-0C-zwW"/>
+                                        <constraint firstAttribute="trailing" secondItem="WRe-6p-dS7" secondAttribute="trailing" constant="15" id="n1K-6G-iuR"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="dateCreatedLabel" destination="WRe-6p-dS7" id="cHY-p6-0fw"/>
                                     <outlet property="reviewTextLabel" destination="CGU-Lo-eXA" id="ypQ-bQ-FTq"/>
                                     <outletCollection property="dynamicHeightLabels" destination="CGU-Lo-eXA" id="LZ0-3c-NY1"/>
                                 </connections>
