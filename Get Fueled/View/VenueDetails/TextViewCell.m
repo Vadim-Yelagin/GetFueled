@@ -50,7 +50,7 @@
 - (void)updateHeight
 {
     [self.textView layoutSubviews];
-    CGFloat newHeight = self.textView.contentSize.height + 20;
+    CGFloat newHeight = [self.textView sizeThatFits:CGSizeMake(self.textView.bounds.size.width, 9999)].height + 20;
     if (self.textViewHeight.constant == newHeight)
         return;
     self.textViewHeight.constant = newHeight;
