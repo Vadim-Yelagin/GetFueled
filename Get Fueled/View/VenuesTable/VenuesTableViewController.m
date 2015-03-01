@@ -16,6 +16,7 @@
     [super awakeFromNib];
     self.reuseIdentifierMatching.defaultReuseIdentifier = @"VenueCell";
     self.viewModel = [[VenuesTableViewModel alloc] init];
+    [self.viewModel.refreshCommand execute:nil];
 }
 
 - (void)viewDidLoad
