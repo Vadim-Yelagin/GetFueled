@@ -16,6 +16,7 @@
 		E86B96191AA3097600CDE27F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E86B96171AA3097600CDE27F /* LaunchScreen.xib */; };
 		E86B96311AA312EB00CDE27F /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E86B962F1AA312EB00CDE27F /* Model.xcdatamodeld */; };
 		E86B96341AA3132200CDE27F /* Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = E86B96331AA3132200CDE27F /* Venue.m */; };
+		E86B96381AA313CB00CDE27F /* FoursquareService.m in Sources */ = {isa = PBXBuildFile; fileRef = E86B96371AA313CB00CDE27F /* FoursquareService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		E86B96301AA312EB00CDE27F /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		E86B96321AA3132200CDE27F /* Venue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Venue.h; sourceTree = "<group>"; };
 		E86B96331AA3132200CDE27F /* Venue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Venue.m; sourceTree = "<group>"; };
+		E86B96361AA313CB00CDE27F /* FoursquareService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoursquareService.h; sourceTree = "<group>"; };
+		E86B96371AA313CB00CDE27F /* FoursquareService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoursquareService.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,15 +90,16 @@
 		E86B96071AA3097600CDE27F /* Get Fueled */ = {
 			isa = PBXGroup;
 			children = (
-				E86B962E1AA30C4200CDE27F /* Model */,
 				E86B960C1AA3097600CDE27F /* AppDelegate.h */,
 				E86B960D1AA3097600CDE27F /* AppDelegate.m */,
-				E86B960F1AA3097600CDE27F /* ViewController.h */,
-				E86B96101AA3097600CDE27F /* ViewController.m */,
-				E86B96121AA3097600CDE27F /* Main.storyboard */,
 				E86B96151AA3097600CDE27F /* Images.xcassets */,
 				E86B96171AA3097600CDE27F /* LaunchScreen.xib */,
+				E86B96121AA3097600CDE27F /* Main.storyboard */,
+				E86B962E1AA30C4200CDE27F /* Model */,
+				E86B96351AA3138800CDE27F /* Networking */,
 				E86B96081AA3097600CDE27F /* Supporting Files */,
+				E86B960F1AA3097600CDE27F /* ViewController.h */,
+				E86B96101AA3097600CDE27F /* ViewController.m */,
 			);
 			path = "Get Fueled";
 			sourceTree = "<group>";
@@ -117,6 +121,15 @@
 				E86B96331AA3132200CDE27F /* Venue.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		E86B96351AA3138800CDE27F /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				E86B96361AA313CB00CDE27F /* FoursquareService.h */,
+				E86B96371AA313CB00CDE27F /* FoursquareService.m */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,6 +239,7 @@
 			files = (
 				E86B96111AA3097600CDE27F /* ViewController.m in Sources */,
 				E86B960E1AA3097600CDE27F /* AppDelegate.m in Sources */,
+				E86B96381AA313CB00CDE27F /* FoursquareService.m in Sources */,
 				E86B960B1AA3097600CDE27F /* main.m in Sources */,
 				E86B96341AA3132200CDE27F /* Venue.m in Sources */,
 				E86B96311AA312EB00CDE27F /* Model.xcdatamodeld in Sources */,
