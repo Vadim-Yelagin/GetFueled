@@ -117,6 +117,26 @@
                                     <outlet property="textViewHeight" destination="Rie-if-5nv" id="zyc-zG-IPe"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddReviewCell" rowHeight="46" id="DzR-3z-sR0" customClass="ETRTableViewCell">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DzR-3z-sR0" id="mvq-t4-hzQ">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Review" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zYE-wh-qcQ">
+                                            <rect key="frame" x="15" y="12" width="290" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="zYE-wh-qcQ" firstAttribute="top" secondItem="mvq-t4-hzQ" secondAttribute="top" constant="12" id="6eQ-a4-RTU"/>
+                                        <constraint firstItem="zYE-wh-qcQ" firstAttribute="leading" secondItem="mvq-t4-hzQ" secondAttribute="leading" constant="15" id="i8R-eT-yZD"/>
+                                        <constraint firstAttribute="bottom" secondItem="zYE-wh-qcQ" secondAttribute="bottom" priority="200" constant="12" id="uOW-7L-Zpq"/>
+                                        <constraint firstAttribute="trailing" secondItem="zYE-wh-qcQ" secondAttribute="trailing" constant="15" id="wgG-yW-dEo"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="t3B-Cr-SWS" id="HAl-PL-Vur"/>
