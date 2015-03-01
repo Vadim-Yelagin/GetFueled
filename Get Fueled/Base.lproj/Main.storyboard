@@ -56,7 +56,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="VenueDetailsOverviewCell" id="9Wk-0r-AGx" customClass="VenueDetailsOverviewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="VenueDetailsOverviewCell" rowHeight="60" id="9Wk-0r-AGx" customClass="VenueDetailsOverviewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9Wk-0r-AGx" id="Aei-Ez-0xP">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -80,18 +80,17 @@
                                     <outletCollection property="dynamicHeightLabels" destination="0na-Oq-NOj" id="x0P-KZ-nu8"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="TextViewCell" id="4RM-Sg-g91" customClass="TextViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="TextViewCell" rowHeight="100" id="4RM-Sg-g91" customClass="TextViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4RM-Sg-g91" id="VSc-9q-ekh">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9U4-U3-rOe">
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu" translatesAutoresizingMaskIntoConstraints="NO" id="9U4-U3-rOe">
                                             <rect key="frame" x="0.0" y="3" width="320" height="149"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="149" id="Rie-if-5nv"/>
                                             </constraints>
-                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             <userDefinedRuntimeAttributes>
@@ -145,6 +144,30 @@
                                         <constraint firstAttribute="trailing" secondItem="zYE-wh-qcQ" secondAttribute="trailing" constant="15" id="wgG-yW-dEo"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ReviewCell" rowHeight="46" id="baG-fA-1Dh" customClass="ReviewCell">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="baG-fA-1Dh" id="V4u-P4-7sP">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="290" translatesAutoresizingMaskIntoConstraints="NO" id="CGU-Lo-eXA">
+                                            <rect key="frame" x="15" y="12" width="290" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="CGU-Lo-eXA" firstAttribute="top" secondItem="V4u-P4-7sP" secondAttribute="top" constant="12" id="7Gw-W3-2oI"/>
+                                        <constraint firstAttribute="trailing" secondItem="CGU-Lo-eXA" secondAttribute="trailing" constant="15" id="ER6-AX-6st"/>
+                                        <constraint firstItem="CGU-Lo-eXA" firstAttribute="leading" secondItem="V4u-P4-7sP" secondAttribute="leading" constant="15" id="JSx-cH-Nol"/>
+                                        <constraint firstAttribute="bottom" secondItem="CGU-Lo-eXA" secondAttribute="bottom" priority="200" constant="12" id="ZR4-vY-VMm"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="reviewTextLabel" destination="CGU-Lo-eXA" id="ypQ-bQ-FTq"/>
+                                    <outletCollection property="dynamicHeightLabels" destination="CGU-Lo-eXA" id="LZ0-3c-NY1"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

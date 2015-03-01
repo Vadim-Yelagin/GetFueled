@@ -10,6 +10,12 @@
 
 @implementation VenueDetailsTableViewController
 
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    self.reuseIdentifierMatching.defaultReuseIdentifier = @"ReviewCell";
+}
+
 - (CGFloat)rowHeightForItem:(id)item
 {
     return ETRDynamicRowHeight;

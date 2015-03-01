@@ -12,6 +12,7 @@
 #import "Venue.h"
 #import "VenueDetailsOverviewCellModel.h"
 #import "VenueDetailsTableViewModel.h"
+#import <ETRCollectionModel/ETRFetchedResultsCollectionModel.h>
 #import <ETRCollectionModel/ETRHidingCollectionModel.h>
 #import <ETRCollectionModel/ETRStaticCollectionModel.h>
 #import <ETRCollectionModel/ETRStaticCellModel.h>
@@ -38,7 +39,13 @@
     ETRStaticCollectionModel *addReviewCollection = [[ETRStaticCollectionModel alloc] initWithSections:@[@[addReview]]];
     ETRHidingCollectionModel *addReviewHiding = [[ETRHidingCollectionModel alloc] initWithCollection:addReviewCollection];
     
-    self = [super initWithCollections:@[header, addReviewHiding]];
+    NSManagedObjectContext *moc = venue.managedObjectContext;
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Review"];
+    request.predicate = [NSPredicate predicateWithFormat:@"venue == %@", venue];
+    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"dateCreated" ascending:NO]];
+    ETRFetchedResultsCollectionModel *reviews = [[ETRFetchedResultsCollectionModel alloc] initWithFetchRequest:request managedObjectContext:moc sectionNameKeyPath:nil cacheName:nil];
+    
+    self = [super initWithCollections:@[header, addReviewHiding, reviews]];
     if (self) {
         _venue = venue;
         _aNewReviewTextView = newReviewTextView;
