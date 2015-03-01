@@ -14,6 +14,7 @@
 @dynamic identifier;
 @dynamic name;
 @dynamic actual;
+@dynamic thumbsDown;
 @dynamic distance;
 
 @end

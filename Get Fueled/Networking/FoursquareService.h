@@ -16,6 +16,7 @@
 + (instancetype)sharedService;
 
 - (NSManagedObjectContext *)mainMOC;
+- (void)saveChanges;
 
 - (RACSignal *)exploreWithLatitude:(double)latitude
                          longitude:(double)longitude

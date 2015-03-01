@@ -7,6 +7,7 @@
 //
 
 #import "FoursquareService.h"
+#import "Venue.h"
 #import "VenuesTableViewModel.h"
 #import <CoreData/CoreData.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
@@ -17,7 +18,7 @@
 {
     NSManagedObjectContext *moc = [FoursquareService sharedService].mainMOC;
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Venue"];
-    request.predicate = [NSPredicate predicateWithFormat:@"actual == YES"];
+    request.predicate = [NSPredicate predicateWithFormat:@"actual == YES && thumbsDown == NO"];
     request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"distance" ascending:YES]];
     self = [super initWithFetchRequest:request
                   managedObjectContext:moc
@@ -32,6 +33,18 @@
         }];
     }
     return self;
+}
+
+- (BOOL)canDeleteItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+- (void)deleteItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    Venue *venue = [self itemAtIndexPath:indexPath];
+    venue.thumbsDown = YES;
+    [[FoursquareService sharedService] saveChanges];
 }
 
 @end
