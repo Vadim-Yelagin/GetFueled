@@ -24,12 +24,6 @@
     return @"TextViewCell";
 }
 
-- (void)setText:(NSString *)text
-{
-    _text = [text copy];
-    NSLog(@"SET %@", text);
-}
-
 - (RACSignal *)endEditingSignal
 {
     return self.endEditingSubject;
