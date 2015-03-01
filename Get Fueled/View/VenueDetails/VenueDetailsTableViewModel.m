@@ -16,6 +16,7 @@
 
 @interface VenueDetailsTableViewModel ()
 
+@property (nonatomic, strong) TextViewCellModel *aNewReviewTextView;
 @property (nonatomic, strong) id addReviewItem;
 
 @end
@@ -37,6 +38,7 @@
     self = [super initWithCollections:@[header, addReviewHiding]];
     if (self) {
         _venue = venue;
+        _aNewReviewTextView = newReviewTextView;
         _addReviewItem = addReview;
         RACSignal *newReviewText = RACObserve(newReviewTextView, text);
         RACSignal *newReviewTextEmpty = [newReviewText map:^id(NSString *value) {
@@ -53,6 +55,7 @@
 {
     id item = [self itemAtIndexPath:indexPath];
     if (item == self.addReviewItem) {
+        self.aNewReviewTextView.text = @"";
         if (completion)
             completion();
     }
