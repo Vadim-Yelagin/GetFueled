@@ -1,0 +1,1 @@
+../../../ETRCollectionModel/Pod/Classes/Views/ETRCollectionViewController.h

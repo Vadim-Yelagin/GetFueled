@@ -1,0 +1,1 @@
+../../../ETRCollectionModel/Pod/Classes/Composite/ETRProxyCollectionModel.h

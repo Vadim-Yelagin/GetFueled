@@ -1,0 +1,1 @@
+../../../ETRCollectionModel/Pod/Classes/Views/ETRTableViewCell.h

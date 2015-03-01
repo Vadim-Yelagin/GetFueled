@@ -1,0 +1,1 @@
+../../../ETRCollectionModel/Pod/Classes/ETRFilteredCollectionModel.h
