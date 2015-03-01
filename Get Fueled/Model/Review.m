@@ -1,21 +1,19 @@
 //
-//  Venue.m
+//  Review.m
 //  Get Fueled
 //
 //  Created by Vadim Yelagin on 01/03/15.
 //  Copyright (c) 2015 Fueled. All rights reserved.
 //
 
+#import "Review.h"
 #import "Venue.h"
 
 
-@implementation Venue
+@implementation Review
 
-@dynamic identifier;
-@dynamic name;
-@dynamic actual;
-@dynamic distance;
-@dynamic thumbsDown;
-@dynamic reviews;
+@dynamic dateCreated;
+@dynamic text;
+@dynamic venue;
 
 @end

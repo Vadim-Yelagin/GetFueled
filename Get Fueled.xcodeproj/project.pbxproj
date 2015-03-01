@@ -14,7 +14,6 @@
 		E86B96161AA3097600CDE27F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E86B96151AA3097600CDE27F /* Images.xcassets */; };
 		E86B96191AA3097600CDE27F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E86B96171AA3097600CDE27F /* LaunchScreen.xib */; };
 		E86B96311AA312EB00CDE27F /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E86B962F1AA312EB00CDE27F /* Model.xcdatamodeld */; };
-		E86B96341AA3132200CDE27F /* Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = E86B96331AA3132200CDE27F /* Venue.m */; };
 		E86B96381AA313CB00CDE27F /* FoursquareService.m in Sources */ = {isa = PBXBuildFile; fileRef = E86B96371AA313CB00CDE27F /* FoursquareService.m */; };
 		E86B963B1AA31BA400CDE27F /* FoursquareResponseGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = E86B963A1AA31BA400CDE27F /* FoursquareResponseGroup.m */; };
 		E86B963E1AA31BD900CDE27F /* FoursquareResponseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E86B963D1AA31BD900CDE27F /* FoursquareResponseItem.m */; };
@@ -27,6 +26,8 @@
 		E86B96571AA3568100CDE27F /* VenueDetailsOverviewCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E86B96561AA3568100CDE27F /* VenueDetailsOverviewCellModel.m */; };
 		E86B96601AA35BCE00CDE27F /* TextViewCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E86B965F1AA35BCE00CDE27F /* TextViewCellModel.m */; };
 		E86B96631AA35BDE00CDE27F /* TextViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E86B96621AA35BDE00CDE27F /* TextViewCell.m */; };
+		E86B96661AA3702800CDE27F /* Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = E86B96651AA3702800CDE27F /* Venue.m */; };
+		E86B96691AA3702800CDE27F /* Review.m in Sources */ = {isa = PBXBuildFile; fileRef = E86B96681AA3702800CDE27F /* Review.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,8 +43,6 @@
 		E86B96151AA3097600CDE27F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E86B96181AA3097600CDE27F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		E86B96301AA312EB00CDE27F /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		E86B96321AA3132200CDE27F /* Venue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Venue.h; sourceTree = "<group>"; };
-		E86B96331AA3132200CDE27F /* Venue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Venue.m; sourceTree = "<group>"; };
 		E86B96361AA313CB00CDE27F /* FoursquareService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoursquareService.h; sourceTree = "<group>"; };
 		E86B96371AA313CB00CDE27F /* FoursquareService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoursquareService.m; sourceTree = "<group>"; };
 		E86B96391AA31BA400CDE27F /* FoursquareResponseGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoursquareResponseGroup.h; sourceTree = "<group>"; };
@@ -68,6 +67,10 @@
 		E86B965F1AA35BCE00CDE27F /* TextViewCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewCellModel.m; sourceTree = "<group>"; };
 		E86B96611AA35BDE00CDE27F /* TextViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewCell.h; sourceTree = "<group>"; };
 		E86B96621AA35BDE00CDE27F /* TextViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewCell.m; sourceTree = "<group>"; };
+		E86B96641AA3702800CDE27F /* Venue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Venue.h; sourceTree = "<group>"; };
+		E86B96651AA3702800CDE27F /* Venue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Venue.m; sourceTree = "<group>"; };
+		E86B96671AA3702800CDE27F /* Review.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Review.h; sourceTree = "<group>"; };
+		E86B96681AA3702800CDE27F /* Review.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Review.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,8 +147,10 @@
 			isa = PBXGroup;
 			children = (
 				E86B962F1AA312EB00CDE27F /* Model.xcdatamodeld */,
-				E86B96321AA3132200CDE27F /* Venue.h */,
-				E86B96331AA3132200CDE27F /* Venue.m */,
+				E86B96671AA3702800CDE27F /* Review.h */,
+				E86B96681AA3702800CDE27F /* Review.m */,
+				E86B96641AA3702800CDE27F /* Venue.h */,
+				E86B96651AA3702800CDE27F /* Venue.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -316,14 +321,15 @@
 				E86B960E1AA3097600CDE27F /* AppDelegate.m in Sources */,
 				E86B96461AA31EFC00CDE27F /* VenueCell.m in Sources */,
 				E86B96381AA313CB00CDE27F /* FoursquareService.m in Sources */,
+				E86B96661AA3702800CDE27F /* Venue.m in Sources */,
 				E86B960B1AA3097600CDE27F /* main.m in Sources */,
 				E86B96541AA3566100CDE27F /* VenueDetailsTableViewModel.m in Sources */,
 				E86B96571AA3568100CDE27F /* VenueDetailsOverviewCellModel.m in Sources */,
-				E86B96341AA3132200CDE27F /* Venue.m in Sources */,
 				E86B96631AA35BDE00CDE27F /* TextViewCell.m in Sources */,
 				E86B96601AA35BCE00CDE27F /* TextViewCellModel.m in Sources */,
 				E86B96491AA31F0D00CDE27F /* VenuesTableViewModel.m in Sources */,
 				E86B963E1AA31BD900CDE27F /* FoursquareResponseItem.m in Sources */,
+				E86B96691AA3702800CDE27F /* Review.m in Sources */,
 				E86B964E1AA3561400CDE27F /* VenueDetailsTableViewController.m in Sources */,
 				E86B96431AA31EE600CDE27F /* VenuesTableViewController.m in Sources */,
 				E86B96311AA312EB00CDE27F /* Model.xcdatamodeld in Sources */,
