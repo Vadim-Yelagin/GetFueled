@@ -109,11 +109,10 @@ static NSString * const FoursquareClientSecret = @"EQLCFBSLOWS243E1MCVKKMFYB0VJV
 
 - (void)markActualVenuesWithGroups:(NSArray *)groups
 {
-    NSArray *items = [groups etr_flatMap:^NSArray *(FoursquareResponseGroup *obj) {
-        return obj.items;
-    }];
-    NSArray *venueIDs = [items etr_map:^id(FoursquareResponseItem *obj) {
-        return obj.venue.identifier;
+    NSArray *venueIDs = [groups etr_flatMap:^NSArray *(FoursquareResponseGroup *obj) {
+        return [obj.items etr_map:^id(FoursquareResponseItem *obj) {
+            return obj.venue.identifier;
+        }];
     }];
     NSSet *venueIDSet = [NSSet setWithArray:venueIDs];
     NSFetchRequest* request = [NSFetchRequest fetchRequestWithEntityName:@"Venue"];
