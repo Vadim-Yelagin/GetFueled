@@ -92,6 +92,11 @@ static NSString * const FoursquareClientSecret = @"EQLCFBSLOWS243E1MCVKKMFYB0VJV
     return _objectManager;
 }
 
+- (NSManagedObjectContext *)mainMOC
+{
+    return self.managedObjectStore.mainQueueManagedObjectContext;
+}
+
 #pragma mark Requests
 
 - (RACSignal *)exploreWithLatitude:(double)latitude

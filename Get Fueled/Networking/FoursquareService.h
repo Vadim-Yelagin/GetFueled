@@ -8,11 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+@class NSManagedObjectContext;
 @class RACSignal;
 
 @interface FoursquareService : NSObject
 
 + (instancetype)sharedService;
+
+- (NSManagedObjectContext *)mainMOC;
 
 - (RACSignal *)exploreWithLatitude:(double)latitude
                          longitude:(double)longitude
