@@ -11,6 +11,7 @@
 #import "VenueCell.h"
 #import <ETRUtils/ETRUtils.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
+#import <RestKit/RestKit.h>
 
 @interface VenueCell ()
 
@@ -18,6 +19,7 @@
 @property (nonatomic, strong) IBOutlet UILabel *ratingLabel;
 @property (nonatomic, strong) IBOutlet UILabel *isOpenLabel;
 @property (nonatomic, strong) IBOutlet UILabel *categoriesLabel;
+@property (nonatomic, strong) IBOutlet UIImageView *categoryIcon;
 
 @end
 
@@ -41,11 +43,18 @@
     RAC(self.isOpenLabel, textColor) = [RACObserve(self, viewModel.isOpen) map:^UIColor *(NSNumber *value) {
         return value.boolValue ? [UIColor blackColor] : [UIColor redColor];
     }];
-    RAC(self.categoriesLabel, text) = [RACObserve(self, viewModel.categories) map:^NSString *(NSSet *value)
+    RACSignal *categories = RACObserve(self, viewModel.categories);
+    RAC(self.categoriesLabel, text) = [categories map:^NSString *(NSSet *value)
     {
         NSArray *sortedNames = [[value sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]]] etr_map:^NSString *(VenueCategory *obj) { return obj.name; }];
         return [sortedNames componentsJoinedByString:@", "];
     }];
+    RACSignal *categoryIconURLs = [categories map:^NSURL *(NSSet *value) {
+        VenueCategory *category = value.anyObject;
+        return category.iconURL;
+    }];
+    RACSignal *placeholderIcon = [RACSignal return:[UIImage imageNamed:@"categoryPlaceholder"]];
+    [self.categoryIcon rac_liftSelector:@selector(setImageWithURL:placeholderImage:) withSignals:categoryIconURLs, placeholderIcon, nil];
 }
 
 + (NSString *)reuseIdentifier

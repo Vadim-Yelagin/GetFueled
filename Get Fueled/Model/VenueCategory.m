@@ -22,7 +22,7 @@
 {
     if (!self.iconPrefix || !self.iconSuffix)
         return nil;
-    NSString *urlString = [NSString stringWithFormat:@"%@bg_64%@", self.iconPrefix, self.iconSuffix];
+    NSString *urlString = [NSString stringWithFormat:@"%@bg_32%@", self.iconPrefix, self.iconSuffix];
     return [NSURL URLWithString:urlString];
 }
 
