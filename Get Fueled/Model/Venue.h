@@ -18,6 +18,8 @@
 @property (nonatomic) BOOL isOpen;
 @property (nonatomic, retain) NSString * isOpenStatus;
 @property (nonatomic) double distance;
+@property (nonatomic) double latitude;
+@property (nonatomic) double longitude;
 @property (nonatomic) double rating;
 @property (nonatomic, retain) NSString * ratingColor;
 @property (nonatomic) BOOL thumbsDown;

@@ -7,6 +7,7 @@
 //
 
 #import "FoursquareService.h"
+#import "MapCellModel.h"
 #import "Review.h"
 #import "TextViewCellModel.h"
 #import "Venue.h"
@@ -31,11 +32,15 @@
 {
     VenueDetailsOverviewCellModel *overview = [[VenueDetailsOverviewCellModel alloc] initWithVenue:venue];
 
+    MapCellModel *map = [[MapCellModel alloc] init];
+    map.latitude = venue.latitude;
+    map.longitude = venue.longitude;
+    
     TextViewCellModel *newReviewTextView = [[TextViewCellModel alloc] init];
     newReviewTextView.placeholder = @"Write a review";
     ETRStaticCellModel *addReview = [[ETRStaticCellModel alloc] initWithReuseIdentifier:@"AddReviewCell"];
     
-    ETRStaticCollectionModel *header = [[ETRStaticCollectionModel alloc] initWithSections:@[@[overview, newReviewTextView]]];
+    ETRStaticCollectionModel *header = [[ETRStaticCollectionModel alloc] initWithSections:@[@[overview, map, newReviewTextView]]];
     ETRStaticCollectionModel *addReviewCollection = [[ETRStaticCollectionModel alloc] initWithSections:@[@[addReview]]];
     ETRHidingCollectionModel *addReviewHiding = [[ETRHidingCollectionModel alloc] initWithCollection:addReviewCollection];
     

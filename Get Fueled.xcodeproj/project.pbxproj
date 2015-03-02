@@ -34,6 +34,8 @@
 		E8CD44061AA44B3300589B19 /* VenueCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CD44051AA44B3300589B19 /* VenueCategory.m */; };
 		E8CD44091AA47FD200589B19 /* VenuePhotosGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CD44081AA47FD200589B19 /* VenuePhotosGroup.m */; };
 		E8CD440C1AA47FD200589B19 /* VenuePhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CD440B1AA47FD200589B19 /* VenuePhoto.m */; };
+		E8CD440F1AA4B0E700589B19 /* MapCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CD440E1AA4B0E700589B19 /* MapCell.m */; };
+		E8CD44121AA4B0F600589B19 /* MapCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CD44111AA4B0F600589B19 /* MapCellModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +90,10 @@
 		E8CD44081AA47FD200589B19 /* VenuePhotosGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenuePhotosGroup.m; sourceTree = "<group>"; };
 		E8CD440A1AA47FD200589B19 /* VenuePhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenuePhoto.h; sourceTree = "<group>"; };
 		E8CD440B1AA47FD200589B19 /* VenuePhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenuePhoto.m; sourceTree = "<group>"; };
+		E8CD440D1AA4B0E700589B19 /* MapCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapCell.h; sourceTree = "<group>"; };
+		E8CD440E1AA4B0E700589B19 /* MapCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapCell.m; sourceTree = "<group>"; };
+		E8CD44101AA4B0F600589B19 /* MapCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapCellModel.h; sourceTree = "<group>"; };
+		E8CD44111AA4B0F600589B19 /* MapCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapCellModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +227,10 @@
 		E86B964B1AA32A8F00CDE27F /* VenueDetails */ = {
 			isa = PBXGroup;
 			children = (
+				E8CD440D1AA4B0E700589B19 /* MapCell.h */,
+				E8CD440E1AA4B0E700589B19 /* MapCell.m */,
+				E8CD44101AA4B0F600589B19 /* MapCellModel.h */,
+				E8CD44111AA4B0F600589B19 /* MapCellModel.m */,
 				E86B966A1AA3718F00CDE27F /* ReviewCell.h */,
 				E86B966B1AA3718F00CDE27F /* ReviewCell.m */,
 				E86B96611AA35BDE00CDE27F /* TextViewCell.h */,
@@ -345,6 +355,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8CD440F1AA4B0E700589B19 /* MapCell.m in Sources */,
 				E86B963B1AA31BA400CDE27F /* FoursquareResponseGroup.m in Sources */,
 				E86B96511AA3563400CDE27F /* VenueDetailsOverviewCell.m in Sources */,
 				E86B960E1AA3097600CDE27F /* AppDelegate.m in Sources */,
@@ -352,6 +363,7 @@
 				E86B96381AA313CB00CDE27F /* FoursquareService.m in Sources */,
 				E86B966C1AA3718F00CDE27F /* ReviewCell.m in Sources */,
 				E86B96661AA3702800CDE27F /* Venue.m in Sources */,
+				E8CD44121AA4B0F600589B19 /* MapCellModel.m in Sources */,
 				E8CD44061AA44B3300589B19 /* VenueCategory.m in Sources */,
 				E86B960B1AA3097600CDE27F /* main.m in Sources */,
 				E86B96541AA3566100CDE27F /* VenueDetailsTableViewModel.m in Sources */,

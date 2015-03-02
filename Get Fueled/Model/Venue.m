@@ -17,6 +17,8 @@
 @dynamic isOpen;
 @dynamic isOpenStatus;
 @dynamic distance;
+@dynamic latitude;
+@dynamic longitude;
 @dynamic rating;
 @dynamic ratingColor;
 @dynamic thumbsDown;

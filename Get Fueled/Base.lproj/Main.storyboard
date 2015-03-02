@@ -36,7 +36,7 @@
             <objects>
                 <tableViewController id="t3B-Cr-SWS" customClass="VenueDetailsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" sectionHeaderHeight="22" sectionFooterHeight="22" id="rkU-ZH-wB1">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" id="aOJ-n5-5zb">
@@ -208,6 +208,28 @@
                                     <outletCollection property="dynamicHeightLabels" destination="CGU-Lo-eXA" id="LZ0-3c-NY1"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MapCell" id="CLf-v5-Vdn" customClass="MapCell">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CLf-v5-Vdn" id="0Ci-74-Z7Z">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="chP-LM-GBp">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="149"/>
+                                        </mapView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="chP-LM-GBp" firstAttribute="top" secondItem="0Ci-74-Z7Z" secondAttribute="top" id="5bA-b8-HsQ"/>
+                                        <constraint firstItem="chP-LM-GBp" firstAttribute="leading" secondItem="0Ci-74-Z7Z" secondAttribute="leading" id="agl-dS-4KL"/>
+                                        <constraint firstAttribute="trailing" secondItem="chP-LM-GBp" secondAttribute="trailing" id="ddN-WQ-VY2"/>
+                                        <constraint firstAttribute="bottom" secondItem="chP-LM-GBp" secondAttribute="bottom" id="rYz-8f-69L"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="mapView" destination="chP-LM-GBp" id="6nA-oq-5IW"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="t3B-Cr-SWS" id="HAl-PL-Vur"/>
@@ -215,6 +237,8 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Details" id="tW8-a4-bgs"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="1000"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZM9-u1-zoy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
