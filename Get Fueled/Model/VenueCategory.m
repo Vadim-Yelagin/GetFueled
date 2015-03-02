@@ -18,4 +18,17 @@
 @dynamic iconSuffix;
 @dynamic venues;
 
+- (NSURL *)iconURL
+{
+    if (!self.iconPrefix || !self.iconSuffix)
+        return nil;
+    NSString *urlString = [NSString stringWithFormat:@"%@bg_64%@", self.iconPrefix, self.iconSuffix];
+    return [NSURL URLWithString:urlString];
+}
+
++ (NSSet *)keyPathsForValuesAffectingIconURL
+{
+    return [NSSet setWithObjects:@"iconPrefix", @"iconSuffix", nil];
+}
+
 @end

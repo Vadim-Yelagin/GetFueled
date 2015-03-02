@@ -19,4 +19,6 @@
 @property (nonatomic, retain) NSString * iconSuffix;
 @property (nonatomic, retain) NSSet *venues;
 
+@property (nonatomic, readonly, strong) NSURL *iconURL;
+
 @end
