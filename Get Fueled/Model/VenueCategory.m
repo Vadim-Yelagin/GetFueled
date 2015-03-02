@@ -31,4 +31,17 @@
     return [NSSet setWithObjects:@"iconPrefix", @"iconSuffix", nil];
 }
 
+- (NSURL *)whiteIconURL
+{
+    if (!self.iconPrefix || !self.iconSuffix)
+        return nil;
+    NSString *urlString = [NSString stringWithFormat:@"%@64%@", self.iconPrefix, self.iconSuffix];
+    return [NSURL URLWithString:urlString];
+}
+
++ (NSSet *)keyPathsForValuesAffectingWhiteIconURL
+{
+    return [NSSet setWithObjects:@"iconPrefix", @"iconSuffix", nil];
+}
+
 @end

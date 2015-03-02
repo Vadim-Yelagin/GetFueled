@@ -19,6 +19,7 @@
 @property (nonatomic, strong) IBOutlet UILabel *nameLabel;
 @property (nonatomic, strong) IBOutlet UIImageView *photoView;
 @property (nonatomic, strong) IBOutlet UILabel *categoriesLabel;
+@property (nonatomic, strong) IBOutlet UIImageView *categoryIcon;
 
 @end
 
@@ -38,6 +39,13 @@
     RACSignal *photoURLs = RACObserve(self, viewModel.photoURL);
     RACSignal *placeholderPhoto = [RACSignal return:[UIImage etr_imageWithColor:[UIColor grayColor] size:CGSizeMake(1, 1)]];
     [self.photoView rac_liftSelector:@selector(setImageWithURL:placeholderImage:) withSignals:photoURLs, placeholderPhoto, nil];
+    
+    RACSignal *categoryIconURLs = [categories map:^NSURL *(NSSet *value) {
+        VenueCategory *category = value.anyObject;
+        return category.whiteIconURL;
+    }];
+    RACSignal *placeholderIcon = [RACSignal return:[UIImage etr_imageWithColor:[UIColor clearColor] size:CGSizeMake(1, 1)]];
+    [self.categoryIcon rac_liftSelector:@selector(setImageWithURL:placeholderImage:) withSignals:categoryIconURLs, placeholderIcon, nil];
 }
 
 @end

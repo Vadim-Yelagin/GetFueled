@@ -20,5 +20,6 @@
 @property (nonatomic, retain) NSSet *venues;
 
 @property (nonatomic, readonly, strong) NSURL *iconURL;
+@property (nonatomic, readonly, strong) NSURL *whiteIconURL;
 
 @end
