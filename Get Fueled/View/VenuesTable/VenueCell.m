@@ -28,8 +28,8 @@
     RAC(self.ratingLabel, text) = [RACObserve(self, viewModel.rating) map:^NSString *(NSNumber *value) {
         NSNumberFormatter *nf = [[NSNumberFormatter alloc] init];
         nf.numberStyle = NSNumberFormatterDecimalStyle;
-        nf.minimumFractionDigits = 1;
-        nf.maximumFractionDigits = 1;
+        nf.minimumSignificantDigits = 2;
+        nf.maximumSignificantDigits = 2;
         return [nf stringFromNumber:value];
     }];
     RAC(self.ratingLabel, textColor) = [RACObserve(self, viewModel.ratingColor) map:^UIColor *(NSString *value) {
@@ -37,7 +37,7 @@
     }];
     RAC(self.isOpenLabel, text) = RACObserve(self, viewModel.isOpenStatus);
     RAC(self.isOpenLabel, textColor) = [RACObserve(self, viewModel.isOpen) map:^UIColor *(NSNumber *value) {
-        return value.boolValue ? [UIColor greenColor] : [UIColor redColor];
+        return value.boolValue ? [UIColor blackColor] : [UIColor redColor];
     }];
 }
 
