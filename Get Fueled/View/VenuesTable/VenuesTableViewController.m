@@ -36,9 +36,8 @@
                  sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"VenueDetailsSegue"]) {
-        VenueCell *cell = sender;
         VenueDetailsTableViewController *vc = segue.destinationViewController;
-        vc.viewModel = [[VenueDetailsTableViewModel alloc] initWithVenue:cell.viewModel];
+        vc.viewModel = [[VenueDetailsTableViewModel alloc] initWithVenue:sender];
     }
 }
 
@@ -50,6 +49,14 @@
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return self.tableView.rowHeight;
+}
+
+- (void)tableView:(UITableView *)tableView
+didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Venue *venue = [self.viewModel itemAtIndexPath:indexPath];
+    [self performSegueWithIdentifier:@"VenueDetailsSegue"
+                              sender:venue];
 }
 
 @end
