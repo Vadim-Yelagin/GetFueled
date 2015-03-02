@@ -15,6 +15,8 @@
 @property (nonatomic, retain) NSString * identifier;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic) BOOL actual;
+@property (nonatomic) BOOL isOpen;
+@property (nonatomic, retain) NSString * isOpenStatus;
 @property (nonatomic) double distance;
 @property (nonatomic) double rating;
 @property (nonatomic, retain) NSString * ratingColor;

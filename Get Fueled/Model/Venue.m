@@ -14,6 +14,8 @@
 @dynamic identifier;
 @dynamic name;
 @dynamic actual;
+@dynamic isOpen;
+@dynamic isOpenStatus;
 @dynamic distance;
 @dynamic rating;
 @dynamic ratingColor;

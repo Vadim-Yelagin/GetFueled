@@ -15,6 +15,7 @@
 
 @property (nonatomic, strong) IBOutlet UILabel *nameLabel;
 @property (nonatomic, strong) IBOutlet UILabel *ratingLabel;
+@property (nonatomic, strong) IBOutlet UILabel *isOpenLabel;
 
 @end
 
@@ -33,6 +34,10 @@
     }];
     RAC(self.ratingLabel, textColor) = [RACObserve(self, viewModel.ratingColor) map:^UIColor *(NSString *value) {
         return [UIColor etr_colorWithHexString:value];
+    }];
+    RAC(self.isOpenLabel, text) = RACObserve(self, viewModel.isOpenStatus);
+    RAC(self.isOpenLabel, textColor) = [RACObserve(self, viewModel.isOpen) map:^UIColor *(NSNumber *value) {
+        return value.boolValue ? [UIColor greenColor] : [UIColor redColor];
     }];
 }
 
