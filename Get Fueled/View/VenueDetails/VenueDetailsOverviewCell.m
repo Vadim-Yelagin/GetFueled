@@ -27,7 +27,7 @@
     [super awakeFromNib];
     RAC(self.nameLabel, text) = RACObserve(self, viewModel.venue.name);
     RACSignal *photoURLs = RACObserve(self, viewModel.photoURL);
-    RACSignal *placeholderPhoto = [RACSignal return:[UIImage etr_imageWithColor:[UIColor blackColor] size:CGSizeMake(1, 1)]];
+    RACSignal *placeholderPhoto = [RACSignal return:[UIImage etr_imageWithColor:[UIColor grayColor] size:CGSizeMake(1, 1)]];
     [self.photoView rac_liftSelector:@selector(setImageWithURL:placeholderImage:) withSignals:photoURLs, placeholderPhoto, nil];
 }
 

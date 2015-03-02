@@ -53,8 +53,12 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="198"/>
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </imageView>
+                                        <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shades" translatesAutoresizingMaskIntoConstraints="NO" id="r70-pb-5QU">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="198"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="290" translatesAutoresizingMaskIntoConstraints="NO" id="0na-Oq-NOj">
-                                            <rect key="frame" x="15" y="157" width="290" height="26"/>
+                                            <rect key="frame" x="15" y="163" width="290" height="26"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -63,13 +67,18 @@
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="sSQ-mA-EHB" secondAttribute="trailing" id="3vb-KR-cmk"/>
                                         <constraint firstItem="sSQ-mA-EHB" firstAttribute="top" secondItem="Aei-Ez-0xP" secondAttribute="top" id="BPY-iY-aBw"/>
+                                        <constraint firstItem="r70-pb-5QU" firstAttribute="top" secondItem="Aei-Ez-0xP" secondAttribute="top" id="EDH-pR-2MZ"/>
+                                        <constraint firstAttribute="bottom" secondItem="r70-pb-5QU" secondAttribute="bottom" id="cgD-ec-s7c"/>
                                         <constraint firstItem="0na-Oq-NOj" firstAttribute="leading" secondItem="Aei-Ez-0xP" secondAttribute="leading" constant="15" id="cqf-wJ-BEZ"/>
                                         <constraint firstItem="sSQ-mA-EHB" firstAttribute="leading" secondItem="Aei-Ez-0xP" secondAttribute="leading" id="fpX-8E-7S4"/>
                                         <constraint firstAttribute="trailing" secondItem="0na-Oq-NOj" secondAttribute="trailing" constant="15" id="iEA-Xx-LNz"/>
+                                        <constraint firstAttribute="trailing" secondItem="r70-pb-5QU" secondAttribute="trailing" id="iJc-T1-ZgH"/>
                                         <constraint firstAttribute="bottom" secondItem="sSQ-mA-EHB" secondAttribute="bottom" id="lmC-yM-AsN"/>
-                                        <constraint firstAttribute="bottom" secondItem="0na-Oq-NOj" secondAttribute="bottom" priority="200" constant="15" id="mB1-j0-NgL"/>
+                                        <constraint firstItem="r70-pb-5QU" firstAttribute="leading" secondItem="Aei-Ez-0xP" secondAttribute="leading" id="lug-L9-VGt"/>
+                                        <constraint firstAttribute="bottom" secondItem="0na-Oq-NOj" secondAttribute="bottom" constant="9" id="mB1-j0-NgL"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
                                     <outlet property="nameLabel" destination="0na-Oq-NOj" id="GFL-jU-7kN"/>
                                     <outlet property="photoView" destination="sSQ-mA-EHB" id="l04-aL-FD4"/>
@@ -204,6 +213,9 @@
             <point key="canvasLocation" x="-6" y="179"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="shades" width="1" height="256"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
