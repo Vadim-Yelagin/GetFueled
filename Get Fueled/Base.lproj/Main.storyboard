@@ -63,11 +63,18 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="290" translatesAutoresizingMaskIntoConstraints="NO" id="LVf-6U-ddS">
+                                            <rect key="frame" x="15" y="9" width="290" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="sSQ-mA-EHB" secondAttribute="trailing" id="3vb-KR-cmk"/>
                                         <constraint firstItem="sSQ-mA-EHB" firstAttribute="top" secondItem="Aei-Ez-0xP" secondAttribute="top" id="BPY-iY-aBw"/>
                                         <constraint firstItem="r70-pb-5QU" firstAttribute="top" secondItem="Aei-Ez-0xP" secondAttribute="top" id="EDH-pR-2MZ"/>
+                                        <constraint firstAttribute="trailing" secondItem="LVf-6U-ddS" secondAttribute="trailing" constant="15" id="F9p-j8-OkF"/>
                                         <constraint firstAttribute="bottom" secondItem="r70-pb-5QU" secondAttribute="bottom" id="cgD-ec-s7c"/>
                                         <constraint firstItem="0na-Oq-NOj" firstAttribute="leading" secondItem="Aei-Ez-0xP" secondAttribute="leading" constant="15" id="cqf-wJ-BEZ"/>
                                         <constraint firstItem="sSQ-mA-EHB" firstAttribute="leading" secondItem="Aei-Ez-0xP" secondAttribute="leading" id="fpX-8E-7S4"/>
@@ -76,13 +83,17 @@
                                         <constraint firstAttribute="bottom" secondItem="sSQ-mA-EHB" secondAttribute="bottom" id="lmC-yM-AsN"/>
                                         <constraint firstItem="r70-pb-5QU" firstAttribute="leading" secondItem="Aei-Ez-0xP" secondAttribute="leading" id="lug-L9-VGt"/>
                                         <constraint firstAttribute="bottom" secondItem="0na-Oq-NOj" secondAttribute="bottom" constant="9" id="mB1-j0-NgL"/>
+                                        <constraint firstItem="LVf-6U-ddS" firstAttribute="leading" secondItem="Aei-Ez-0xP" secondAttribute="leading" constant="15" id="raE-DF-NT1"/>
+                                        <constraint firstItem="LVf-6U-ddS" firstAttribute="top" secondItem="Aei-Ez-0xP" secondAttribute="top" constant="9" id="vol-ik-bEe"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
+                                    <outlet property="categoriesLabel" destination="LVf-6U-ddS" id="cQQ-Lh-SsS"/>
                                     <outlet property="nameLabel" destination="0na-Oq-NOj" id="GFL-jU-7kN"/>
                                     <outlet property="photoView" destination="sSQ-mA-EHB" id="l04-aL-FD4"/>
                                     <outletCollection property="dynamicHeightLabels" destination="0na-Oq-NOj" id="x0P-KZ-nu8"/>
+                                    <outletCollection property="dynamicHeightLabels" destination="LVf-6U-ddS" id="JFQ-Nw-WOc"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="TextViewCell" rowHeight="100" id="4RM-Sg-g91" customClass="TextViewCell">
