@@ -59,8 +59,8 @@
     if (!prototype) {
         prototype = [[self nib] instantiateWithOwner:nil options:nil].firstObject;
     }
-    prototype.viewModel = viewModel;
     UILabel *label = prototype.nameLabel;
+    label.text = viewModel.name;
     CGFloat xPadding = prototype.bounds.size.width - label.bounds.size.width;
     CGFloat yPadding = prototype.bounds.size.height - label.bounds.size.height;
     CGFloat labelWidth = tableView.bounds.size.width - xPadding;
