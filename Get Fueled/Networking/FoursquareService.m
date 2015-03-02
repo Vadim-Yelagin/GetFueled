@@ -28,6 +28,7 @@ static NSString * const FoursquareClientSecret = @"EQLCFBSLOWS243E1MCVKKMFYB0VJV
 @property (strong, nonatomic) RKObjectMapping *groupMapping;
 @property (strong, nonatomic) RKObjectMapping *itemMapping;
 @property (strong, nonatomic) RKEntityMapping *venueMapping;
+@property (strong, nonatomic) RKEntityMapping *venueCategoryMapping;
 
 @end
 
@@ -220,7 +221,20 @@ static NSString * const FoursquareClientSecret = @"EQLCFBSLOWS243E1MCVKKMFYB0VJV
                                                         @"hours.isOpen": @"isOpen",
                                                         @"hours.status": @"isOpenStatus"}];
     [_venueMapping addAttributeMappingsFromArray:@[@"name", @"rating", @"ratingColor"]];
+    [_venueMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"categories" toKeyPath:@"categories" withMapping:self.venueCategoryMapping]];
     return _venueMapping;
+}
+
+- (RKEntityMapping *)venueCategoryMapping
+{
+    if (_venueCategoryMapping)
+        return _venueCategoryMapping;
+    _venueCategoryMapping = [RKEntityMapping mappingForEntityForName:@"VenueCategory"
+                                                inManagedObjectStore:self.managedObjectStore];
+    _venueCategoryMapping.identificationAttributes = @[@"identifier"];
+    [_venueCategoryMapping addAttributeMappingsFromDictionary:@{@"id": @"identifier"}];
+    [_venueCategoryMapping addAttributeMappingsFromArray:@[@"name"]];
+    return _venueCategoryMapping;
 }
 
 @end
