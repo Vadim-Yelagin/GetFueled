@@ -15,6 +15,8 @@
 
 @property (nonatomic, retain) NSString * identifier;
 @property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSString * iconPrefix;
+@property (nonatomic, retain) NSString * iconSuffix;
 @property (nonatomic, retain) NSSet *venues;
 
 @end

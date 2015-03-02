@@ -14,6 +14,8 @@
 
 @dynamic identifier;
 @dynamic name;
+@dynamic iconPrefix;
+@dynamic iconSuffix;
 @dynamic venues;
 
 @end

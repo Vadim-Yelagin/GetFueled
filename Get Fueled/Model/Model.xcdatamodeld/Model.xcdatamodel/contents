@@ -19,6 +19,8 @@
         <relationship name="reviews" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Review" inverseName="venue" inverseEntity="Review" syncable="YES"/>
     </entity>
     <entity name="VenueCategory" representedClassName="VenueCategory" syncable="YES">
+        <attribute name="iconPrefix" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="iconSuffix" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="identifier" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="venues" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Venue" inverseName="categories" inverseEntity="Venue" syncable="YES"/>
@@ -26,6 +28,6 @@
     <elements>
         <element name="Review" positionX="-54" positionY="27" width="128" height="88"/>
         <element name="Venue" positionX="-63" positionY="-18" width="128" height="208"/>
-        <element name="VenueCategory" positionX="-54" positionY="63" width="128" height="88"/>
+        <element name="VenueCategory" positionX="-54" positionY="63" width="128" height="118"/>
     </elements>
 </model>
