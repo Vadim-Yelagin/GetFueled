@@ -7,6 +7,7 @@
 //
 
 #import "Venue.h"
+#import "VenueCategory.h"
 #import "VenueCell.h"
 #import <ETRUtils/ETRUtils.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
@@ -16,6 +17,7 @@
 @property (nonatomic, strong) IBOutlet UILabel *nameLabel;
 @property (nonatomic, strong) IBOutlet UILabel *ratingLabel;
 @property (nonatomic, strong) IBOutlet UILabel *isOpenLabel;
+@property (nonatomic, strong) IBOutlet UILabel *categoriesLabel;
 
 @end
 
@@ -38,6 +40,11 @@
     RAC(self.isOpenLabel, text) = RACObserve(self, viewModel.isOpenStatus);
     RAC(self.isOpenLabel, textColor) = [RACObserve(self, viewModel.isOpen) map:^UIColor *(NSNumber *value) {
         return value.boolValue ? [UIColor blackColor] : [UIColor redColor];
+    }];
+    RAC(self.categoriesLabel, text) = [RACObserve(self, viewModel.categories) map:^NSString *(NSSet *value)
+    {
+        NSArray *sortedNames = [[value sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]]] etr_map:^NSString *(VenueCategory *obj) { return obj.name; }];
+        return [sortedNames componentsJoinedByString:@", "];
     }];
 }
 
