@@ -7,6 +7,7 @@
 //
 
 #import "FoursquareService.h"
+#import "Fueled.h"
 #import "Venue.h"
 #import "VenuesTableViewModel.h"
 #import <CoreData/CoreData.h>
@@ -26,8 +27,8 @@
                              cacheName:nil];
     {
         _refreshCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
-            return [[FoursquareService sharedService] exploreWithLatitude:40.724279
-                                                                longitude:-73.997372
+            return [[FoursquareService sharedService] exploreWithLatitude:FueledLatitude
+                                                                longitude:FueledLongitude
                                                                   section:@"food"
                                                                     limit:50];
         }];

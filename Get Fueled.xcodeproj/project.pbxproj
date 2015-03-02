@@ -36,6 +36,7 @@
 		E8CD440C1AA47FD200589B19 /* VenuePhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CD440B1AA47FD200589B19 /* VenuePhoto.m */; };
 		E8CD440F1AA4B0E700589B19 /* MapCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CD440E1AA4B0E700589B19 /* MapCell.m */; };
 		E8CD44121AA4B0F600589B19 /* MapCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CD44111AA4B0F600589B19 /* MapCellModel.m */; };
+		E8CD44151AA4B70100589B19 /* Fueled.c in Sources */ = {isa = PBXBuildFile; fileRef = E8CD44141AA4B70100589B19 /* Fueled.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +95,8 @@
 		E8CD440E1AA4B0E700589B19 /* MapCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapCell.m; sourceTree = "<group>"; };
 		E8CD44101AA4B0F600589B19 /* MapCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapCellModel.h; sourceTree = "<group>"; };
 		E8CD44111AA4B0F600589B19 /* MapCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapCellModel.m; sourceTree = "<group>"; };
+		E8CD44131AA4B66E00589B19 /* Fueled.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Fueled.h; sourceTree = "<group>"; };
+		E8CD44141AA4B70100589B19 /* Fueled.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Fueled.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +153,8 @@
 				E86B960D1AA3097600CDE27F /* AppDelegate.m */,
 				E86B966D1AA3745C00CDE27F /* ETRRACAdditions.h */,
 				E86B966E1AA3745C00CDE27F /* ETRRACAdditions.m */,
+				E8CD44141AA4B70100589B19 /* Fueled.c */,
+				E8CD44131AA4B66E00589B19 /* Fueled.h */,
 				E86B96151AA3097600CDE27F /* Images.xcassets */,
 				E86B962E1AA30C4200CDE27F /* Model */,
 				E86B96351AA3138800CDE27F /* Networking */,
@@ -367,6 +372,7 @@
 				E8CD44061AA44B3300589B19 /* VenueCategory.m in Sources */,
 				E86B960B1AA3097600CDE27F /* main.m in Sources */,
 				E86B96541AA3566100CDE27F /* VenueDetailsTableViewModel.m in Sources */,
+				E8CD44151AA4B70100589B19 /* Fueled.c in Sources */,
 				E8CD440C1AA47FD200589B19 /* VenuePhoto.m in Sources */,
 				E86B96571AA3568100CDE27F /* VenueDetailsOverviewCellModel.m in Sources */,
 				E86B96631AA35BDE00CDE27F /* TextViewCell.m in Sources */,
