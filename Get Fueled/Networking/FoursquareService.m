@@ -29,6 +29,8 @@ static NSString * const FoursquareClientSecret = @"EQLCFBSLOWS243E1MCVKKMFYB0VJV
 @property (strong, nonatomic) RKObjectMapping *itemMapping;
 @property (strong, nonatomic) RKEntityMapping *venueMapping;
 @property (strong, nonatomic) RKEntityMapping *venueCategoryMapping;
+@property (strong, nonatomic) RKEntityMapping *venuePhotosGroupMapping;
+@property (strong, nonatomic) RKEntityMapping *venuePhotoMapping;
 
 @end
 
@@ -137,6 +139,7 @@ static NSString * const FoursquareClientSecret = @"EQLCFBSLOWS243E1MCVKKMFYB0VJV
     NSDictionary *parameters = @{@"client_id": FoursquareClientID,
                                  @"client_secret": FoursquareClientSecret,
                                  @"v": FoursquareVersion,
+                                 @"venuePhotos": @YES,
                                  @"ll": ll,
                                  @"section": section,
                                  @"limit": @(limit)};
@@ -222,6 +225,7 @@ static NSString * const FoursquareClientSecret = @"EQLCFBSLOWS243E1MCVKKMFYB0VJV
                                                         @"hours.status": @"isOpenStatus"}];
     [_venueMapping addAttributeMappingsFromArray:@[@"name", @"rating", @"ratingColor"]];
     [_venueMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"categories" toKeyPath:@"categories" withMapping:self.venueCategoryMapping]];
+    [_venueMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"photos.groups" toKeyPath:@"photosGroups" withMapping:self.venuePhotosGroupMapping]];
     return _venueMapping;
 }
 
@@ -237,6 +241,28 @@ static NSString * const FoursquareClientSecret = @"EQLCFBSLOWS243E1MCVKKMFYB0VJV
                                                                 @"icon.suffix": @"iconSuffix"}];
     [_venueCategoryMapping addAttributeMappingsFromArray:@[@"name"]];
     return _venueCategoryMapping;
+}
+
+- (RKEntityMapping *)venuePhotosGroupMapping
+{
+    if (_venuePhotosGroupMapping)
+        return _venuePhotosGroupMapping;
+    _venuePhotosGroupMapping = [RKEntityMapping mappingForEntityForName:@"VenuePhotosGroup"
+                                                   inManagedObjectStore:self.managedObjectStore];
+    [_venuePhotosGroupMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"items" toKeyPath:@"items" withMapping:self.venuePhotoMapping]];
+    return _venuePhotosGroupMapping;
+}
+
+- (RKEntityMapping *)venuePhotoMapping
+{
+    if (_venuePhotoMapping)
+        return _venuePhotoMapping;
+    _venuePhotoMapping = [RKEntityMapping mappingForEntityForName:@"VenuePhoto"
+                                             inManagedObjectStore:self.managedObjectStore];
+    _venuePhotoMapping.identificationAttributes = @[@"identifier"];
+    [_venuePhotoMapping addAttributeMappingsFromDictionary:@{@"id": @"identifier"}];
+    [_venuePhotoMapping addAttributeMappingsFromArray:@[@"prefix", @"suffix"]];
+    return _venuePhotoMapping;
 }
 
 @end

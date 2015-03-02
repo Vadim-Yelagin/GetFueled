@@ -16,6 +16,7 @@
         <attribute name="ratingColor" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="thumbsDown" attributeType="Boolean" defaultValueString="NO" indexed="YES" syncable="YES"/>
         <relationship name="categories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="VenueCategory" inverseName="venues" inverseEntity="VenueCategory" syncable="YES"/>
+        <relationship name="photosGroups" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="VenuePhotosGroup" inverseName="venue" inverseEntity="VenuePhotosGroup" syncable="YES"/>
         <relationship name="reviews" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Review" inverseName="venue" inverseEntity="Review" syncable="YES"/>
     </entity>
     <entity name="VenueCategory" representedClassName="VenueCategory" syncable="YES">
@@ -25,9 +26,21 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="venues" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Venue" inverseName="categories" inverseEntity="Venue" syncable="YES"/>
     </entity>
+    <entity name="VenuePhoto" representedClassName="VenuePhoto" syncable="YES">
+        <attribute name="identifier" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="prefix" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="suffix" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="group" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="VenuePhotosGroup" inverseName="items" inverseEntity="VenuePhotosGroup" syncable="YES"/>
+    </entity>
+    <entity name="VenuePhotosGroup" representedClassName="VenuePhotosGroup" syncable="YES">
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="VenuePhoto" inverseName="group" inverseEntity="VenuePhoto" syncable="YES"/>
+        <relationship name="venue" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Venue" inverseName="photosGroups" inverseEntity="Venue" syncable="YES"/>
+    </entity>
     <elements>
         <element name="Review" positionX="-54" positionY="27" width="128" height="88"/>
-        <element name="Venue" positionX="-63" positionY="-18" width="128" height="208"/>
+        <element name="Venue" positionX="-63" positionY="-18" width="128" height="223"/>
         <element name="VenueCategory" positionX="-54" positionY="63" width="128" height="118"/>
+        <element name="VenuePhotosGroup" positionX="-45" positionY="81" width="128" height="73"/>
+        <element name="VenuePhoto" positionX="-36" positionY="90" width="128" height="103"/>
     </elements>
 </model>

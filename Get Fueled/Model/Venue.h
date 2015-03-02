@@ -23,5 +23,6 @@
 @property (nonatomic) BOOL thumbsDown;
 @property (nonatomic, retain) NSSet *reviews;
 @property (nonatomic, retain) NSSet *categories;
+@property (nonatomic, retain) NSSet *photosGroups;
 
 @end

@@ -22,5 +22,6 @@
 @dynamic thumbsDown;
 @dynamic reviews;
 @dynamic categories;
+@dynamic photosGroups;
 
 @end
