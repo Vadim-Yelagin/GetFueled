@@ -15,6 +15,8 @@
 @dynamic name;
 @dynamic actual;
 @dynamic distance;
+@dynamic rating;
+@dynamic ratingColor;
 @dynamic thumbsDown;
 @dynamic reviews;
 

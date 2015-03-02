@@ -16,6 +16,8 @@
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic) BOOL actual;
 @property (nonatomic) double distance;
+@property (nonatomic) double rating;
+@property (nonatomic, retain) NSString * ratingColor;
 @property (nonatomic) BOOL thumbsDown;
 @property (nonatomic, retain) NSSet *reviews;
 

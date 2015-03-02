@@ -217,7 +217,7 @@ static NSString * const FoursquareClientSecret = @"EQLCFBSLOWS243E1MCVKKMFYB0VJV
     _venueMapping.identificationAttributes = @[@"identifier"];
     [_venueMapping addAttributeMappingsFromDictionary:@{@"id": @"identifier",
                                                         @"location.distance": @"distance"}];
-    [_venueMapping addAttributeMappingsFromArray:@[@"name"]];
+    [_venueMapping addAttributeMappingsFromArray:@[@"name", @"rating", @"ratingColor"]];
     return _venueMapping;
 }
 
