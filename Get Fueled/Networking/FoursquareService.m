@@ -232,7 +232,9 @@ static NSString * const FoursquareClientSecret = @"EQLCFBSLOWS243E1MCVKKMFYB0VJV
     _venueCategoryMapping = [RKEntityMapping mappingForEntityForName:@"VenueCategory"
                                                 inManagedObjectStore:self.managedObjectStore];
     _venueCategoryMapping.identificationAttributes = @[@"identifier"];
-    [_venueCategoryMapping addAttributeMappingsFromDictionary:@{@"id": @"identifier"}];
+    [_venueCategoryMapping addAttributeMappingsFromDictionary:@{@"id": @"identifier",
+                                                                @"icon.prefix": @"iconPrefix",
+                                                                @"icon.suffix": @"iconSuffix"}];
     [_venueCategoryMapping addAttributeMappingsFromArray:@[@"name"]];
     return _venueCategoryMapping;
 }
