@@ -8,6 +8,7 @@
 
 #import "VenueDetailsOverviewCellModel.h"
 #import "VenueDetailsTableViewController.h"
+#import <ETRCollectionModel/ETRStaticCellModel.h>
 
 @implementation VenueDetailsTableViewController
 
@@ -22,6 +23,9 @@
     if ([item isKindOfClass:[VenueDetailsOverviewCellModel class]]) {
         CGFloat height = self.tableView.bounds.size.width * [VenueDetailsOverviewCellModel photoRatio];
         return MIN(height, round(self.tableView.bounds.size.height / 2));
+    }
+    if ([item isKindOfClass:[ETRStaticCellModel class]]) {
+        return 44;
     }
     return ETRDynamicRowHeight;
 }
