@@ -33,7 +33,8 @@
         if (photo) {
             UIScreen *screen = [UIScreen mainScreen];
             CGFloat ratio = [[self class] photoRatio];
-            int width = round(screen.bounds.size.width * screen.scale);
+            CGFloat screenSide = MIN(screen.bounds.size.width, screen.bounds.size.height);
+            int width = round(screenSide * screen.scale);
             int height = round(width * ratio);
             NSString *size = [NSString stringWithFormat:@"%dx%d", width, height];
             NSString *urlString = [NSString stringWithFormat:@"%@%@%@", photo.prefix, size, photo.suffix];
