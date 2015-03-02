@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Venues-->
@@ -15,56 +14,6 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <inset key="separatorInset" minX="40" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="VenueCell" id="nri-ZZ-2YO" customClass="VenueCell">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nri-ZZ-2YO" id="z6P-nP-FgR">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Venue Name" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="246" translatesAutoresizingMaskIntoConstraints="NO" id="TDm-vu-DrY">
-                                            <rect key="frame" x="40" y="12" width="247" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" image="disclosureIndicator" translatesAutoresizingMaskIntoConstraints="NO" id="DEd-fL-Gpq">
-                                            <rect key="frame" x="300" y="27" width="8" height="12"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Open until 11:00 PM" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VhY-6S-Fri">
-                                            <rect key="frame" x="40" y="37" width="247" height="16"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="9.9" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j7k-pb-8oj">
-                                            <rect key="frame" x="10" y="14" width="22" height="18"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="DEd-fL-Gpq" secondAttribute="trailing" constant="12" id="508-Av-eER"/>
-                                        <constraint firstAttribute="centerY" secondItem="DEd-fL-Gpq" secondAttribute="centerY" id="CNU-bX-Bfr"/>
-                                        <constraint firstItem="TDm-vu-DrY" firstAttribute="leading" secondItem="z6P-nP-FgR" secondAttribute="leading" constant="40" id="WSe-cT-FW0"/>
-                                        <constraint firstItem="TDm-vu-DrY" firstAttribute="trailing" secondItem="VhY-6S-Fri" secondAttribute="trailing" id="ZIO-D1-cd2"/>
-                                        <constraint firstAttribute="bottom" secondItem="VhY-6S-Fri" secondAttribute="bottom" priority="200" constant="12" id="ayf-uV-3zI"/>
-                                        <constraint firstAttribute="trailing" secondItem="TDm-vu-DrY" secondAttribute="trailing" constant="33" id="h9b-WS-9Ro"/>
-                                        <constraint firstItem="TDm-vu-DrY" firstAttribute="top" secondItem="z6P-nP-FgR" secondAttribute="top" constant="12" id="ioj-Wq-ta0"/>
-                                        <constraint firstItem="TDm-vu-DrY" firstAttribute="leading" secondItem="VhY-6S-Fri" secondAttribute="leading" id="ksZ-e7-g6N"/>
-                                        <constraint firstItem="TDm-vu-DrY" firstAttribute="top" secondItem="j7k-pb-8oj" secondAttribute="top" constant="-2" id="oxL-F5-bM4"/>
-                                        <constraint firstItem="TDm-vu-DrY" firstAttribute="leading" secondItem="j7k-pb-8oj" secondAttribute="centerX" constant="19" id="qhU-jp-YqL"/>
-                                        <constraint firstItem="VhY-6S-Fri" firstAttribute="top" secondItem="TDm-vu-DrY" secondAttribute="bottom" constant="4" id="uuc-xS-nhg"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="isOpenLabel" destination="VhY-6S-Fri" id="y1Z-oN-70u"/>
-                                    <outlet property="nameLabel" destination="TDm-vu-DrY" id="bhL-eH-W5A"/>
-                                    <outlet property="ratingLabel" destination="j7k-pb-8oj" id="3t1-nH-cXF"/>
-                                    <outletCollection property="dynamicHeightLabels" destination="TDm-vu-DrY" id="rJy-ab-RMO"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="aqO-82-HdS" id="3gG-AW-zK4"/>
                             <outlet property="delegate" destination="aqO-82-HdS" id="Orx-26-DGU"/>
@@ -247,9 +196,6 @@
             <point key="canvasLocation" x="-6" y="179"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="disclosureIndicator" width="8" height="12"/>
-    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

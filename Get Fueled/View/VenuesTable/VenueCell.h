@@ -14,4 +14,10 @@
 
 @property (nonatomic, strong) Venue *viewModel;
 
++ (NSString *)reuseIdentifier;
++ (UINib *)nib;
+
++ (CGFloat)heightForViewModel:(Venue *)viewModel
+                  inTableView:(UITableView *)tableView;
+
 @end

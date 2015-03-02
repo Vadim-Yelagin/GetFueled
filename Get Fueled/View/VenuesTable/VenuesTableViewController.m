@@ -18,7 +18,7 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
-    self.reuseIdentifierMatching.defaultReuseIdentifier = @"VenueCell";
+    self.reuseIdentifierMatching.defaultReuseIdentifier = [VenueCell reuseIdentifier];
     self.viewModel = [[VenuesTableViewModel alloc] init];
     RACCommand *refreshCommand = self.viewModel.refreshCommand;
     [self rac_liftSelector:@selector(etr_alertError:)
@@ -29,6 +29,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.tableView registerNib:[VenueCell nib]
+         forCellReuseIdentifier:[VenueCell reuseIdentifier]];
     self.refreshControl.rac_command = self.viewModel.refreshCommand;
 }
 
@@ -43,7 +45,8 @@
 
 - (CGFloat)rowHeightForItem:(id)item
 {
-    return ETRDynamicRowHeight;
+    return [VenueCell heightForViewModel:item
+                             inTableView:self.tableView];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath

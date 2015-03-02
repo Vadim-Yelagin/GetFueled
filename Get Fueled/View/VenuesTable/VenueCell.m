@@ -41,4 +41,31 @@
     }];
 }
 
++ (NSString *)reuseIdentifier
+{
+    return @"VenueCell";
+}
+
++ (UINib *)nib
+{
+    return [UINib nibWithNibName:@"VenueCell"
+                          bundle:nil];
+}
+
++ (CGFloat)heightForViewModel:(Venue *)viewModel
+                  inTableView:(UITableView *)tableView
+{
+    static VenueCell *prototype = nil;
+    if (!prototype) {
+        prototype = [[self nib] instantiateWithOwner:nil options:nil].firstObject;
+    }
+    prototype.viewModel = viewModel;
+    UILabel *label = prototype.nameLabel;
+    CGFloat xPadding = prototype.bounds.size.width - label.bounds.size.width;
+    CGFloat yPadding = prototype.bounds.size.height - label.bounds.size.height;
+    CGFloat labelWidth = tableView.bounds.size.width - xPadding;
+    CGFloat labelHeight = [label sizeThatFits:CGSizeMake(labelWidth, 9999)].height;
+    return labelHeight + yPadding;
+}
+
 @end

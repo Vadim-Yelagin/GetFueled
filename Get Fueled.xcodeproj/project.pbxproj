@@ -30,6 +30,7 @@
 		E86B96691AA3702800CDE27F /* Review.m in Sources */ = {isa = PBXBuildFile; fileRef = E86B96681AA3702800CDE27F /* Review.m */; };
 		E86B966C1AA3718F00CDE27F /* ReviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E86B966B1AA3718F00CDE27F /* ReviewCell.m */; };
 		E86B966F1AA3745C00CDE27F /* ETRRACAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E86B966E1AA3745C00CDE27F /* ETRRACAdditions.m */; };
+		E86B96711AA440AF00CDE27F /* VenueCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E86B96701AA440AF00CDE27F /* VenueCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,7 @@
 		E86B966B1AA3718F00CDE27F /* ReviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReviewCell.m; sourceTree = "<group>"; };
 		E86B966D1AA3745C00CDE27F /* ETRRACAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRRACAdditions.h; sourceTree = "<group>"; };
 		E86B966E1AA3745C00CDE27F /* ETRRACAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRRACAdditions.m; sourceTree = "<group>"; };
+		E86B96701AA440AF00CDE27F /* VenueCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VenueCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +194,7 @@
 			children = (
 				E86B96441AA31EFC00CDE27F /* VenueCell.h */,
 				E86B96451AA31EFC00CDE27F /* VenueCell.m */,
+				E86B96701AA440AF00CDE27F /* VenueCell.xib */,
 				E86B96411AA31EE600CDE27F /* VenuesTableViewController.h */,
 				E86B96421AA31EE600CDE27F /* VenuesTableViewController.m */,
 				E86B96471AA31F0D00CDE27F /* VenuesTableViewModel.h */,
@@ -281,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E86B96141AA3097600CDE27F /* Main.storyboard in Resources */,
+				E86B96711AA440AF00CDE27F /* VenueCell.xib in Resources */,
 				E86B96191AA3097600CDE27F /* LaunchScreen.xib in Resources */,
 				E86B96161AA3097600CDE27F /* Images.xcassets in Resources */,
 			);
