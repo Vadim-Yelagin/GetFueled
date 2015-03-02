@@ -34,9 +34,12 @@
             UIScreen *screen = [UIScreen mainScreen];
             CGFloat ratio = [[self class] photoRatio];
             CGFloat screenSide = MIN(screen.bounds.size.width, screen.bounds.size.height);
-            int width = round(screenSide * screen.scale);
-            int height = round(width * ratio);
-            NSString *size = [NSString stringWithFormat:@"%dx%d", width, height];
+            CGFloat width = screenSide * screen.scale;
+            CGFloat height = width * ratio;
+            CGFloat parallax = 20 * screen.scale;
+            width += parallax;
+            height += parallax;
+            NSString *size = [NSString stringWithFormat:@"%dx%d", (int)width, (int)height];
             NSString *urlString = [NSString stringWithFormat:@"%@%@%@", photo.prefix, size, photo.suffix];
             _photoURL = [NSURL URLWithString:urlString];
         }
