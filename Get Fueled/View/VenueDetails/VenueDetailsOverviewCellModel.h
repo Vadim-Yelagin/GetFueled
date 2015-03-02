@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @class Venue;
 
@@ -14,7 +15,9 @@
 
 @property (nonatomic, readonly, copy) NSString *reuseIdentifier;
 @property (nonatomic, readonly, strong) Venue *venue;
+@property (nonatomic, readonly, strong) NSURL *photoURL;
 
 - (instancetype)initWithVenue:(Venue *)venue;
++ (CGFloat)photoRatio;
 
 @end

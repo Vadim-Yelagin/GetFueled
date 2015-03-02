@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 Fueled. All rights reserved.
 //
 
+#import "VenueDetailsOverviewCellModel.h"
 #import "VenueDetailsTableViewController.h"
 
 @implementation VenueDetailsTableViewController
@@ -18,6 +19,9 @@
 
 - (CGFloat)rowHeightForItem:(id)item
 {
+    if ([item isKindOfClass:[VenueDetailsOverviewCellModel class]]) {
+        return self.tableView.bounds.size.width * [VenueDetailsOverviewCellModel photoRatio];
+    }
     return ETRDynamicRowHeight;
 }
 

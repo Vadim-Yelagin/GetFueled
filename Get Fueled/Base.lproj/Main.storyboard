@@ -44,27 +44,34 @@
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </view>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="VenueDetailsOverviewCell" rowHeight="60" id="9Wk-0r-AGx" customClass="VenueDetailsOverviewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="VenueDetailsOverviewCell" rowHeight="199" id="9Wk-0r-AGx" customClass="VenueDetailsOverviewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9Wk-0r-AGx" id="Aei-Ez-0xP">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sSQ-mA-EHB">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="198"/>
+                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="290" translatesAutoresizingMaskIntoConstraints="NO" id="0na-Oq-NOj">
-                                            <rect key="frame" x="15" y="15" width="290" height="26"/>
+                                            <rect key="frame" x="15" y="157" width="290" height="26"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="0na-Oq-NOj" firstAttribute="top" secondItem="Aei-Ez-0xP" secondAttribute="top" constant="15" id="Y3C-V3-rsB"/>
+                                        <constraint firstAttribute="trailing" secondItem="sSQ-mA-EHB" secondAttribute="trailing" id="3vb-KR-cmk"/>
+                                        <constraint firstItem="sSQ-mA-EHB" firstAttribute="top" secondItem="Aei-Ez-0xP" secondAttribute="top" id="BPY-iY-aBw"/>
                                         <constraint firstItem="0na-Oq-NOj" firstAttribute="leading" secondItem="Aei-Ez-0xP" secondAttribute="leading" constant="15" id="cqf-wJ-BEZ"/>
+                                        <constraint firstItem="sSQ-mA-EHB" firstAttribute="leading" secondItem="Aei-Ez-0xP" secondAttribute="leading" id="fpX-8E-7S4"/>
                                         <constraint firstAttribute="trailing" secondItem="0na-Oq-NOj" secondAttribute="trailing" constant="15" id="iEA-Xx-LNz"/>
+                                        <constraint firstAttribute="bottom" secondItem="sSQ-mA-EHB" secondAttribute="bottom" id="lmC-yM-AsN"/>
                                         <constraint firstAttribute="bottom" secondItem="0na-Oq-NOj" secondAttribute="bottom" priority="200" constant="15" id="mB1-j0-NgL"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="nameLabel" destination="0na-Oq-NOj" id="GFL-jU-7kN"/>
+                                    <outlet property="photoView" destination="sSQ-mA-EHB" id="l04-aL-FD4"/>
                                     <outletCollection property="dynamicHeightLabels" destination="0na-Oq-NOj" id="x0P-KZ-nu8"/>
                                 </connections>
                             </tableViewCell>
@@ -177,7 +184,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZM9-u1-zoy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="808" y="179"/>
+            <point key="canvasLocation" x="808" y="178"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7Zd-uN-MYj">
