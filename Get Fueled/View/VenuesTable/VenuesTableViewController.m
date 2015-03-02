@@ -42,4 +42,14 @@
     }
 }
 
+- (CGFloat)rowHeightForItem:(id)item
+{
+    return ETRDynamicRowHeight;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return self.tableView.rowHeight;
+}
+
 @end
