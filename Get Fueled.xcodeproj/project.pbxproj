@@ -31,6 +31,7 @@
 		E86B966C1AA3718F00CDE27F /* ReviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E86B966B1AA3718F00CDE27F /* ReviewCell.m */; };
 		E86B966F1AA3745C00CDE27F /* ETRRACAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E86B966E1AA3745C00CDE27F /* ETRRACAdditions.m */; };
 		E86B96711AA440AF00CDE27F /* VenueCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E86B96701AA440AF00CDE27F /* VenueCell.xib */; };
+		E8CD44061AA44B3300589B19 /* VenueCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CD44051AA44B3300589B19 /* VenueCategory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +80,8 @@
 		E86B966D1AA3745C00CDE27F /* ETRRACAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRRACAdditions.h; sourceTree = "<group>"; };
 		E86B966E1AA3745C00CDE27F /* ETRRACAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRRACAdditions.m; sourceTree = "<group>"; };
 		E86B96701AA440AF00CDE27F /* VenueCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VenueCell.xib; sourceTree = "<group>"; };
+		E8CD44041AA44B3300589B19 /* VenueCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueCategory.h; sourceTree = "<group>"; };
+		E8CD44051AA44B3300589B19 /* VenueCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueCategory.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +164,8 @@
 				E86B96681AA3702800CDE27F /* Review.m */,
 				E86B96641AA3702800CDE27F /* Venue.h */,
 				E86B96651AA3702800CDE27F /* Venue.m */,
+				E8CD44041AA44B3300589B19 /* VenueCategory.h */,
+				E8CD44051AA44B3300589B19 /* VenueCategory.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -337,6 +342,7 @@
 				E86B96381AA313CB00CDE27F /* FoursquareService.m in Sources */,
 				E86B966C1AA3718F00CDE27F /* ReviewCell.m in Sources */,
 				E86B96661AA3702800CDE27F /* Venue.m in Sources */,
+				E8CD44061AA44B3300589B19 /* VenueCategory.m in Sources */,
 				E86B960B1AA3097600CDE27F /* main.m in Sources */,
 				E86B96541AA3566100CDE27F /* VenueDetailsTableViewModel.m in Sources */,
 				E86B96571AA3568100CDE27F /* VenueDetailsOverviewCellModel.m in Sources */,

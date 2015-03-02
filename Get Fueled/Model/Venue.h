@@ -22,5 +22,6 @@
 @property (nonatomic, retain) NSString * ratingColor;
 @property (nonatomic) BOOL thumbsDown;
 @property (nonatomic, retain) NSSet *reviews;
+@property (nonatomic, retain) NSSet *categories;
 
 @end

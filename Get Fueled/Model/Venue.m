@@ -21,5 +21,6 @@
 @dynamic ratingColor;
 @dynamic thumbsDown;
 @dynamic reviews;
+@dynamic categories;
 
 @end
