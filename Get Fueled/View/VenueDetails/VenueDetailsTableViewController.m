@@ -20,7 +20,8 @@
 - (CGFloat)rowHeightForItem:(id)item
 {
     if ([item isKindOfClass:[VenueDetailsOverviewCellModel class]]) {
-        return self.tableView.bounds.size.width * [VenueDetailsOverviewCellModel photoRatio];
+        CGFloat height = self.tableView.bounds.size.width * [VenueDetailsOverviewCellModel photoRatio];
+        return MIN(height, round(self.tableView.bounds.size.height / 2));
     }
     return ETRDynamicRowHeight;
 }
