@@ -111,7 +111,7 @@
                                     <outletCollection property="dynamicHeightLabels" destination="LVf-6U-ddS" id="JFQ-Nw-WOc"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="VenueDetailsInfoCell" id="yhY-5e-rNV" customClass="VenueDetailsInfoCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="VenueDetailsInfoCell" rowHeight="104" id="yhY-5e-rNV" customClass="VenueDetailsInfoCell">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yhY-5e-rNV" id="k1k-0x-6gH">
@@ -158,6 +158,7 @@
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
+                                    <outlet property="addressLabel" destination="fPc-ow-BIn" id="Xee-tl-NtW"/>
                                     <outlet property="isOpenLabel" destination="BKj-jq-mc4" id="fKi-gm-MNs"/>
                                     <outlet property="ratingLabel" destination="AAT-Gg-5W6" id="O8f-Tc-lsi"/>
                                     <outletCollection property="dynamicHeightLabels" destination="fPc-ow-BIn" id="V84-jd-5s3"/>

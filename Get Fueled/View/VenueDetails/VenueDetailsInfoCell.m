@@ -36,7 +36,9 @@
         return [UIColor etr_colorWithHexString:value];
     }];
     RAC(self.isOpenLabel, text) = RACObserve(self, viewModel.venue.isOpenStatus);
-    //RAC(self.addressLabel, text) = RACObserve(self, viewModel.venue.address);
+    RAC(self.addressLabel, text) = [RACObserve(self, viewModel.venue.formattedAddress) map:^NSString *(NSArray *value) {
+        return [value firstObject];
+    }];
 }
 
 @end

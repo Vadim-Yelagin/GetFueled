@@ -23,6 +23,7 @@
 @property (nonatomic) double rating;
 @property (nonatomic, retain) NSString * ratingColor;
 @property (nonatomic) BOOL thumbsDown;
+@property (nonatomic, retain) NSArray * formattedAddress;
 @property (nonatomic, retain) NSSet *reviews;
 @property (nonatomic, retain) NSSet *categories;
 @property (nonatomic, retain) NSSet *photosGroups;

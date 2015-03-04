@@ -223,6 +223,7 @@ static NSString * const FoursquareClientSecret = @"EQLCFBSLOWS243E1MCVKKMFYB0VJV
                                                         @"location.distance": @"distance",
                                                         @"location.lat": @"latitude",
                                                         @"location.lng": @"longitude",
+                                                        @"location.formattedAddress": @"formattedAddress",
                                                         @"hours.isOpen": @"isOpen",
                                                         @"hours.status": @"isOpenStatus"}];
     [_venueMapping addAttributeMappingsFromArray:@[@"name", @"rating", @"ratingColor"]];
