@@ -22,6 +22,7 @@
 @dynamic rating;
 @dynamic ratingColor;
 @dynamic thumbsDown;
+@dynamic formattedAddress;
 @dynamic reviews;
 @dynamic categories;
 @dynamic photosGroups;
