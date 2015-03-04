@@ -28,6 +28,7 @@
     RAC(self.ratingLabel, text) = [RACObserve(self, viewModel.venue.rating) map:^NSString *(NSNumber *value) {
         NSNumberFormatter *nf = [[NSNumberFormatter alloc] init];
         nf.numberStyle = NSNumberFormatterDecimalStyle;
+        nf.usesSignificantDigits = YES;
         nf.minimumSignificantDigits = 2;
         nf.maximumSignificantDigits = 2;
         return [nf stringFromNumber:value];
