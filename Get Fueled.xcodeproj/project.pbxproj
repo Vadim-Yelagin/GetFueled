@@ -33,6 +33,7 @@
 		E86B96711AA440AF00CDE27F /* VenueCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E86B96701AA440AF00CDE27F /* VenueCell.xib */; };
 		E8A0CAD11AA6F191005BD242 /* VenueDetailsInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A0CAD01AA6F191005BD242 /* VenueDetailsInfoCell.m */; };
 		E8A0CAD41AA6F1A3005BD242 /* VenueDetailsInfoCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A0CAD31AA6F1A3005BD242 /* VenueDetailsInfoCellModel.m */; };
+		E8BA90DD1AA718DB00923EBC /* TintColorLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BA90DC1AA718DB00923EBC /* TintColorLabel.m */; };
 		E8CD44061AA44B3300589B19 /* VenueCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CD44051AA44B3300589B19 /* VenueCategory.m */; };
 		E8CD44091AA47FD200589B19 /* VenuePhotosGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CD44081AA47FD200589B19 /* VenuePhotosGroup.m */; };
 		E8CD440C1AA47FD200589B19 /* VenuePhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CD440B1AA47FD200589B19 /* VenuePhoto.m */; };
@@ -91,6 +92,8 @@
 		E8A0CAD01AA6F191005BD242 /* VenueDetailsInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueDetailsInfoCell.m; sourceTree = "<group>"; };
 		E8A0CAD21AA6F1A3005BD242 /* VenueDetailsInfoCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueDetailsInfoCellModel.h; sourceTree = "<group>"; };
 		E8A0CAD31AA6F1A3005BD242 /* VenueDetailsInfoCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueDetailsInfoCellModel.m; sourceTree = "<group>"; };
+		E8BA90DB1AA718DB00923EBC /* TintColorLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TintColorLabel.h; sourceTree = "<group>"; };
+		E8BA90DC1AA718DB00923EBC /* TintColorLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TintColorLabel.m; sourceTree = "<group>"; };
 		E8CD44041AA44B3300589B19 /* VenueCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueCategory.h; sourceTree = "<group>"; };
 		E8CD44051AA44B3300589B19 /* VenueCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueCategory.m; sourceTree = "<group>"; };
 		E8CD44071AA47FD200589B19 /* VenuePhotosGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenuePhotosGroup.h; sourceTree = "<group>"; };
@@ -248,6 +251,8 @@
 				E86B96621AA35BDE00CDE27F /* TextViewCell.m */,
 				E86B965E1AA35BCE00CDE27F /* TextViewCellModel.h */,
 				E86B965F1AA35BCE00CDE27F /* TextViewCellModel.m */,
+				E8BA90DB1AA718DB00923EBC /* TintColorLabel.h */,
+				E8BA90DC1AA718DB00923EBC /* TintColorLabel.m */,
 				E8A0CACF1AA6F191005BD242 /* VenueDetailsInfoCell.h */,
 				E8A0CAD01AA6F191005BD242 /* VenueDetailsInfoCell.m */,
 				E8A0CAD21AA6F1A3005BD242 /* VenueDetailsInfoCellModel.h */,
@@ -371,6 +376,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8CD440F1AA4B0E700589B19 /* MapCell.m in Sources */,
+				E8BA90DD1AA718DB00923EBC /* TintColorLabel.m in Sources */,
 				E86B963B1AA31BA400CDE27F /* FoursquareResponseGroup.m in Sources */,
 				E86B96511AA3563400CDE27F /* VenueDetailsOverviewCell.m in Sources */,
 				E86B960E1AA3097600CDE27F /* AppDelegate.m in Sources */,
