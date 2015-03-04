@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Venues-->
@@ -326,9 +327,6 @@
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vYa-G3-FgT">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="1024"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="Vjy-HR-KFa"/>
-                                </constraints>
                                 <connections>
                                     <segue destination="5Fc-Lb-Hui" kind="embed" identifier="EmbedVenues" id="hVR-kj-Wfi"/>
                                 </connections>
@@ -349,6 +347,7 @@
                             <constraint firstItem="Nw3-Bk-gJR" firstAttribute="leading" secondItem="vYa-G3-FgT" secondAttribute="trailing" constant="1" id="kGm-MR-pH5"/>
                             <constraint firstAttribute="trailing" secondItem="Nw3-Bk-gJR" secondAttribute="trailing" id="rAs-XC-gyg"/>
                             <constraint firstItem="aEb-rb-2tS" firstAttribute="top" secondItem="Nw3-Bk-gJR" secondAttribute="bottom" id="wfe-mW-Jjj"/>
+                            <constraint firstAttribute="width" secondItem="vYa-G3-FgT" secondAttribute="width" multiplier="2.4" id="zqo-ZI-2mZ"/>
                         </constraints>
                     </view>
                 </viewController>
