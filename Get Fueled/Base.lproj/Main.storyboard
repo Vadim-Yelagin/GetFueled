@@ -209,7 +209,7 @@
                                     <outlet property="textViewHeight" destination="Rie-if-5nv" id="zyc-zG-IPe"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddReviewCell" rowHeight="46" id="DzR-3z-sR0" customClass="ETRTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ButtonCell" rowHeight="46" id="DzR-3z-sR0" customClass="ButtonCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DzR-3z-sR0" id="mvq-t4-hzQ">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -227,6 +227,9 @@
                                         <constraint firstAttribute="trailing" secondItem="zYE-wh-qcQ" secondAttribute="trailing" constant="15" id="wgG-yW-dEo"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="buttonLabel" destination="zYE-wh-qcQ" id="nYK-WH-IIs"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ReviewCell" rowHeight="70" id="baG-fA-1Dh" customClass="ReviewCell">
                                 <autoresizingMask key="autoresizingMask"/>

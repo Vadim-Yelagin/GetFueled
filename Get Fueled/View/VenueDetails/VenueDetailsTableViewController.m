@@ -6,10 +6,10 @@
 //  Copyright (c) 2015 Fueled. All rights reserved.
 //
 
+#import "ButtonCellModel.h"
 #import "MapCellModel.h"
 #import "VenueDetailsOverviewCellModel.h"
 #import "VenueDetailsTableViewController.h"
-#import <ETRCollectionModel/ETRStaticCellModel.h>
 
 @implementation VenueDetailsTableViewController
 
@@ -27,7 +27,7 @@
         CGFloat height = self.tableView.bounds.size.width * [VenueDetailsOverviewCellModel photoRatio];
         return MIN(height, round(self.tableView.bounds.size.height / 2));
     }
-    if ([item isKindOfClass:[ETRStaticCellModel class]]) {
+    if ([item isKindOfClass:[ButtonCellModel class]]) {
         return 44;
     }
     return ETRDynamicRowHeight;

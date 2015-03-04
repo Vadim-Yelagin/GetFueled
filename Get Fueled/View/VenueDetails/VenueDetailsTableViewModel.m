@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 Fueled. All rights reserved.
 //
 
+#import "ButtonCellModel.h"
 #import "FoursquareService.h"
 #import "MapCellModel.h"
 #import "Review.h"
@@ -23,7 +24,6 @@
 @interface VenueDetailsTableViewModel ()
 
 @property (nonatomic, strong) TextViewCellModel *aNewReviewTextView;
-@property (nonatomic, strong) id addReviewItem;
 
 @end
 
@@ -41,9 +41,32 @@
     
     TextViewCellModel *newReviewTextView = [[TextViewCellModel alloc] init];
     newReviewTextView.placeholder = @"Write a review";
-    ETRStaticCellModel *addReview = [[ETRStaticCellModel alloc] initWithReuseIdentifier:@"AddReviewCell"];
+    ButtonCellModel *addReview = [[ButtonCellModel alloc] init];
+    addReview.title = @"Add Review";
+    @weakify(self);
+    addReview.action = ^{
+        @strongify(self);
+        [self addReview];
+    };
     
-    ETRStaticCollectionModel *header = [[ETRStaticCollectionModel alloc] initWithSections:@[@[overview, info, map, newReviewTextView]]];
+    NSMutableArray *urlButtons = [NSMutableArray array];
+    void (^addURLButton)(NSString *, NSString *) = ^(NSString *urlString, NSString *title)
+    {
+        NSURL *url = [NSURL URLWithString:urlString];
+        if (!url)
+            return;
+        ButtonCellModel *button = [[ButtonCellModel alloc] init];
+        button.title = title;
+        button.action = ^{
+            [[UIApplication sharedApplication] openURL:url];
+        };
+        [urlButtons addObject:button];
+    };
+    addURLButton(venue.siteURL, venue.siteURL);
+    addURLButton(venue.menuURL, @"Menu");
+    addURLButton(venue.reservationsURL, @"Reservations");
+    
+    ETRStaticCollectionModel *header = [[ETRStaticCollectionModel alloc] initWithSections:@[@[overview, info, map], urlButtons, @[newReviewTextView]]];
     ETRStaticCollectionModel *addReviewCollection = [[ETRStaticCollectionModel alloc] initWithSections:@[@[addReview]]];
     ETRHidingCollectionModel *addReviewHiding = [[ETRHidingCollectionModel alloc] initWithCollection:addReviewCollection];
     
@@ -58,7 +81,6 @@
     if (self) {
         _venue = venue;
         _aNewReviewTextView = newReviewTextView;
-        _addReviewItem = addReview;
         RACSignal *newReviewText = RACObserve(newReviewTextView, text);
         RACSignal *newReviewTextEmpty = [newReviewText map:^id(NSString *value) {
             NSCharacterSet *set = [NSCharacterSet whitespaceAndNewlineCharacterSet];
@@ -69,26 +91,29 @@
     return self;
 }
 
-- (void)addReviewWithText:(NSString *)text
+- (void)addReview
 {
     NSManagedObjectContext *moc = self.venue.managedObjectContext;
     if (!moc)
         return;
-    Review *review = [NSEntityDescription insertNewObjectForEntityForName:@"Review" inManagedObjectContext:moc];
+    Review *review = [NSEntityDescription insertNewObjectForEntityForName:@"Review"
+                                                   inManagedObjectContext:moc];
     review.dateCreated = [NSDate date];
-    review.text = text;
+    review.text = self.aNewReviewTextView.text;
     review.venue = self.venue;
     [[FoursquareService sharedService] saveChanges];
+    [self.aNewReviewTextView endEditing];
+    self.aNewReviewTextView.text = @"";
 }
 
 - (void)didSelectItemAtIndexPath:(NSIndexPath *)indexPath
                       completion:(void (^)(void))completion
 {
     id item = [self itemAtIndexPath:indexPath];
-    if (item == self.addReviewItem) {
-        [self addReviewWithText:self.aNewReviewTextView.text];
-        [self.aNewReviewTextView endEditing];
-        self.aNewReviewTextView.text = @"";
+    if ([item isKindOfClass:[ButtonCellModel class]]) {
+        ButtonCellModel *button = item;
+        if (button.action)
+            button.action();
         if (completion)
             completion();
     }
