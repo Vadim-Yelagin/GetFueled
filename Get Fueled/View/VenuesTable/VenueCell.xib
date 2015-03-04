@@ -38,7 +38,7 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" image="disclosureIndicator" translatesAutoresizingMaskIntoConstraints="NO" id="RYG-aS-Cc0">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" misplaced="YES" image="disclosureIndicator" translatesAutoresizingMaskIntoConstraints="NO" id="RYG-aS-Cc0">
                         <rect key="frame" x="300" y="35" width="8" height="12"/>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" image="categoryPaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="TiR-Rt-UY2">

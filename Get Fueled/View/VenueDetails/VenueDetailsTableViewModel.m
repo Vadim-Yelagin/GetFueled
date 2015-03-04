@@ -11,6 +11,7 @@
 #import "Review.h"
 #import "TextViewCellModel.h"
 #import "Venue.h"
+#import "VenueDetailsInfoCellModel.h"
 #import "VenueDetailsOverviewCellModel.h"
 #import "VenueDetailsTableViewModel.h"
 #import <ETRCollectionModel/ETRFetchedResultsCollectionModel.h>
@@ -36,11 +37,13 @@
     map.latitude = venue.latitude;
     map.longitude = venue.longitude;
     
+    VenueDetailsInfoCellModel *info = [[VenueDetailsInfoCellModel alloc] initWithVenue:venue];
+    
     TextViewCellModel *newReviewTextView = [[TextViewCellModel alloc] init];
     newReviewTextView.placeholder = @"Write a review";
     ETRStaticCellModel *addReview = [[ETRStaticCellModel alloc] initWithReuseIdentifier:@"AddReviewCell"];
     
-    ETRStaticCollectionModel *header = [[ETRStaticCollectionModel alloc] initWithSections:@[@[overview, map, newReviewTextView]]];
+    ETRStaticCollectionModel *header = [[ETRStaticCollectionModel alloc] initWithSections:@[@[overview, info, map, newReviewTextView]]];
     ETRStaticCollectionModel *addReviewCollection = [[ETRStaticCollectionModel alloc] initWithSections:@[@[addReview]]];
     ETRHidingCollectionModel *addReviewHiding = [[ETRHidingCollectionModel alloc] initWithCollection:addReviewCollection];
     
