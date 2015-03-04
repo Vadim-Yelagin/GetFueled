@@ -9,8 +9,11 @@
 #import "ETRTableViewController.h"
 #import "VenuesTableViewModel.h"
 
+@protocol VenuesTableViewControllerDelegate;
+
 @interface VenuesTableViewController : ETRTableViewController
 
+@property (nonatomic, weak) IBOutlet id<VenuesTableViewControllerDelegate> delegate;
 @property (nonatomic, strong) VenuesTableViewModel *viewModel;
 
 @end

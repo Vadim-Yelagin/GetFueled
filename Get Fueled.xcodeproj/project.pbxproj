@@ -37,6 +37,8 @@
 		E8BA90E01AA71A7300923EBC /* ButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BA90DF1AA71A7300923EBC /* ButtonCell.m */; };
 		E8BA90E31AA71A8200923EBC /* ButtonCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BA90E21AA71A8200923EBC /* ButtonCellModel.m */; };
 		E8BA90E61AA7281000923EBC /* Main-pad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8BA90E51AA7281000923EBC /* Main-pad.storyboard */; };
+		E8BA90EA1AA7304000923EBC /* VenueDetailsPush.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BA90E91AA7304000923EBC /* VenueDetailsPush.m */; };
+		E8BA90ED1AA730C500923EBC /* SplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BA90EC1AA730C500923EBC /* SplitViewController.m */; };
 		E8CD44061AA44B3300589B19 /* VenueCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CD44051AA44B3300589B19 /* VenueCategory.m */; };
 		E8CD44091AA47FD200589B19 /* VenuePhotosGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CD44081AA47FD200589B19 /* VenuePhotosGroup.m */; };
 		E8CD440C1AA47FD200589B19 /* VenuePhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CD440B1AA47FD200589B19 /* VenuePhoto.m */; };
@@ -102,6 +104,11 @@
 		E8BA90E11AA71A8200923EBC /* ButtonCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonCellModel.h; sourceTree = "<group>"; };
 		E8BA90E21AA71A8200923EBC /* ButtonCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonCellModel.m; sourceTree = "<group>"; };
 		E8BA90E51AA7281000923EBC /* Main-pad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Main-pad.storyboard"; sourceTree = "<group>"; };
+		E8BA90E71AA72F8A00923EBC /* VenuesTableViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenuesTableViewControllerDelegate.h; sourceTree = "<group>"; };
+		E8BA90E81AA7304000923EBC /* VenueDetailsPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueDetailsPush.h; sourceTree = "<group>"; };
+		E8BA90E91AA7304000923EBC /* VenueDetailsPush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueDetailsPush.m; sourceTree = "<group>"; };
+		E8BA90EB1AA730C500923EBC /* SplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplitViewController.h; sourceTree = "<group>"; };
+		E8BA90EC1AA730C500923EBC /* SplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplitViewController.m; sourceTree = "<group>"; };
 		E8CD44041AA44B3300589B19 /* VenueCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueCategory.h; sourceTree = "<group>"; };
 		E8CD44051AA44B3300589B19 /* VenueCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueCategory.m; sourceTree = "<group>"; };
 		E8CD44071AA47FD200589B19 /* VenuePhotosGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenuePhotosGroup.h; sourceTree = "<group>"; };
@@ -227,6 +234,8 @@
 				E86B96171AA3097600CDE27F /* LaunchScreen.xib */,
 				E8BA90E51AA7281000923EBC /* Main-pad.storyboard */,
 				E86B96121AA3097600CDE27F /* Main.storyboard */,
+				E8BA90EB1AA730C500923EBC /* SplitViewController.h */,
+				E8BA90EC1AA730C500923EBC /* SplitViewController.m */,
 				E86B964B1AA32A8F00CDE27F /* VenueDetails */,
 				E86B96401AA31E9E00CDE27F /* VenuesTable */,
 			);
@@ -239,8 +248,11 @@
 				E86B96441AA31EFC00CDE27F /* VenueCell.h */,
 				E86B96451AA31EFC00CDE27F /* VenueCell.m */,
 				E86B96701AA440AF00CDE27F /* VenueCell.xib */,
+				E8BA90E81AA7304000923EBC /* VenueDetailsPush.h */,
+				E8BA90E91AA7304000923EBC /* VenueDetailsPush.m */,
 				E86B96411AA31EE600CDE27F /* VenuesTableViewController.h */,
 				E86B96421AA31EE600CDE27F /* VenuesTableViewController.m */,
+				E8BA90E71AA72F8A00923EBC /* VenuesTableViewControllerDelegate.h */,
 				E86B96471AA31F0D00CDE27F /* VenuesTableViewModel.h */,
 				E86B96481AA31F0D00CDE27F /* VenuesTableViewModel.m */,
 			);
@@ -406,6 +418,7 @@
 				E86B96541AA3566100CDE27F /* VenueDetailsTableViewModel.m in Sources */,
 				E8CD44151AA4B70100589B19 /* Fueled.c in Sources */,
 				E8CD440C1AA47FD200589B19 /* VenuePhoto.m in Sources */,
+				E8BA90EA1AA7304000923EBC /* VenueDetailsPush.m in Sources */,
 				E86B96571AA3568100CDE27F /* VenueDetailsOverviewCellModel.m in Sources */,
 				E86B96631AA35BDE00CDE27F /* TextViewCell.m in Sources */,
 				E86B96601AA35BCE00CDE27F /* TextViewCellModel.m in Sources */,
@@ -415,6 +428,7 @@
 				E86B96691AA3702800CDE27F /* Review.m in Sources */,
 				E86B964E1AA3561400CDE27F /* VenueDetailsTableViewController.m in Sources */,
 				E8BA90E31AA71A8200923EBC /* ButtonCellModel.m in Sources */,
+				E8BA90ED1AA730C500923EBC /* SplitViewController.m in Sources */,
 				E8A0CAD41AA6F1A3005BD242 /* VenueDetailsInfoCellModel.m in Sources */,
 				E86B96431AA31EE600CDE27F /* VenuesTableViewController.m in Sources */,
 				E8CD44091AA47FD200589B19 /* VenuePhotosGroup.m in Sources */,

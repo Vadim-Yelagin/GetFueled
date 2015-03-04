@@ -10,6 +10,7 @@
 #import "VenueDetailsTableViewController.h"
 #import "VenueDetailsTableViewModel.h"
 #import "VenuesTableViewController.h"
+#import "VenuesTableViewControllerDelegate.h"
 #import <ETRUtils/ETRUtils.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
 
@@ -53,8 +54,8 @@
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     Venue *venue = [self.viewModel itemAtIndexPath:indexPath];
-    [self performSegueWithIdentifier:@"VenueDetailsSegue"
-                              sender:venue];
+    [self.delegate venuesTableViewController:self
+                              didSelectVenue:venue];
 }
 
 @end
