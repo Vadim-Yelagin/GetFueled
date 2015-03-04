@@ -36,6 +36,7 @@
 		E8BA90DD1AA718DB00923EBC /* TintColorLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BA90DC1AA718DB00923EBC /* TintColorLabel.m */; };
 		E8BA90E01AA71A7300923EBC /* ButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BA90DF1AA71A7300923EBC /* ButtonCell.m */; };
 		E8BA90E31AA71A8200923EBC /* ButtonCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BA90E21AA71A8200923EBC /* ButtonCellModel.m */; };
+		E8BA90E61AA7281000923EBC /* Main-pad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8BA90E51AA7281000923EBC /* Main-pad.storyboard */; };
 		E8CD44061AA44B3300589B19 /* VenueCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CD44051AA44B3300589B19 /* VenueCategory.m */; };
 		E8CD44091AA47FD200589B19 /* VenuePhotosGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CD44081AA47FD200589B19 /* VenuePhotosGroup.m */; };
 		E8CD440C1AA47FD200589B19 /* VenuePhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CD440B1AA47FD200589B19 /* VenuePhoto.m */; };
@@ -100,6 +101,7 @@
 		E8BA90DF1AA71A7300923EBC /* ButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonCell.m; sourceTree = "<group>"; };
 		E8BA90E11AA71A8200923EBC /* ButtonCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonCellModel.h; sourceTree = "<group>"; };
 		E8BA90E21AA71A8200923EBC /* ButtonCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonCellModel.m; sourceTree = "<group>"; };
+		E8BA90E51AA7281000923EBC /* Main-pad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Main-pad.storyboard"; sourceTree = "<group>"; };
 		E8CD44041AA44B3300589B19 /* VenueCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueCategory.h; sourceTree = "<group>"; };
 		E8CD44051AA44B3300589B19 /* VenueCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueCategory.m; sourceTree = "<group>"; };
 		E8CD44071AA47FD200589B19 /* VenuePhotosGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenuePhotosGroup.h; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				E86B96171AA3097600CDE27F /* LaunchScreen.xib */,
+				E8BA90E51AA7281000923EBC /* Main-pad.storyboard */,
 				E86B96121AA3097600CDE27F /* Main.storyboard */,
 				E86B964B1AA32A8F00CDE27F /* VenueDetails */,
 				E86B96401AA31E9E00CDE27F /* VenuesTable */,
@@ -338,6 +341,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8BA90E61AA7281000923EBC /* Main-pad.storyboard in Resources */,
 				E86B96141AA3097600CDE27F /* Main.storyboard in Resources */,
 				E86B96711AA440AF00CDE27F /* VenueCell.xib in Resources */,
 				E86B96191AA3097600CDE27F /* LaunchScreen.xib in Resources */,
@@ -527,6 +531,7 @@
 				INFOPLIST_FILE = "Get Fueled/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -539,6 +544,7 @@
 				INFOPLIST_FILE = "Get Fueled/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
