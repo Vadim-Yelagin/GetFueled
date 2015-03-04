@@ -13,6 +13,9 @@
 
 @dynamic identifier;
 @dynamic name;
+@dynamic siteURL;
+@dynamic reservationsURL;
+@dynamic menuURL;
 @dynamic actual;
 @dynamic isOpen;
 @dynamic isOpenStatus;

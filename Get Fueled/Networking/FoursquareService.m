@@ -220,6 +220,9 @@ static NSString * const FoursquareClientSecret = @"EQLCFBSLOWS243E1MCVKKMFYB0VJV
                                         inManagedObjectStore:self.managedObjectStore];
     _venueMapping.identificationAttributes = @[@"identifier"];
     [_venueMapping addAttributeMappingsFromDictionary:@{@"id": @"identifier",
+                                                        @"url": @"siteURL",
+                                                        @"menu.url": @"menuURL",
+                                                        @"reservations.url": @"reservationsURL",
                                                         @"location.distance": @"distance",
                                                         @"location.lat": @"latitude",
                                                         @"location.lng": @"longitude",

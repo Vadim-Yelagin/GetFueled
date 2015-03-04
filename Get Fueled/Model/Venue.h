@@ -14,6 +14,9 @@
 
 @property (nonatomic, retain) NSString * identifier;
 @property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSString * siteURL;
+@property (nonatomic, retain) NSString * reservationsURL;
+@property (nonatomic, retain) NSString * menuURL;
 @property (nonatomic) BOOL actual;
 @property (nonatomic) BOOL isOpen;
 @property (nonatomic, retain) NSString * isOpenStatus;
