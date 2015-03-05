@@ -53,11 +53,6 @@
     newReviewTextView.placeholder = @"Write a review";
     ButtonCellModel *addReview = [[ButtonCellModel alloc] init];
     addReview.title = @"Add Review";
-    @weakify(self);
-    addReview.action = ^{
-        @strongify(self);
-        [self addReview];
-    };
     
     NSMutableArray *urlButtons = [NSMutableArray array];
     void (^addURLButton)(NSString *, NSString *) = ^(NSString *urlString, NSString *title)
@@ -76,7 +71,9 @@
     addURLButton(venue.menuURL, @"Menu");
     addURLButton(venue.reservationsURL, @"Reservations");
     
-    ETRStaticCollectionModel *header = [[ETRStaticCollectionModel alloc] initWithSections:@[@[overview, info, map], urlButtons, @[newReviewTextView]]];
+    ButtonCellModel *thumbsDown = [[ButtonCellModel alloc] init];
+    
+    ETRStaticCollectionModel *header = [[ETRStaticCollectionModel alloc] initWithSections:@[@[overview, info, map], urlButtons, @[thumbsDown, newReviewTextView]]];
     ETRStaticCollectionModel *addReviewCollection = [[ETRStaticCollectionModel alloc] initWithSections:@[@[addReview]]];
     ETRHidingCollectionModel *addReviewHiding = [[ETRHidingCollectionModel alloc] initWithCollection:addReviewCollection];
     
@@ -97,8 +94,29 @@
             return @([value stringByTrimmingCharactersInSet:set].length == 0);
         }];
         RAC(addReviewHiding, hidden, @YES) = newReviewTextEmpty;
+        RAC(thumbsDown, title) = [RACObserve(self, venue.thumbsDown)
+                                  map:^NSString *(NSNumber *value)
+                                  {
+                                      return value.boolValue ? @"Un-Thumbs-Down" : @"Thumbs-Down";
+                                  }];
+        
+        @weakify(self);
+        addReview.action = ^{
+            @strongify(self);
+            [self addReview];
+        };
+        thumbsDown.action = ^{
+            @strongify(self);
+            [self toggleThumbsDown];
+        };
     }
     return self;
+}
+
+- (void)toggleThumbsDown
+{
+    self.venue.thumbsDown = !self.venue.thumbsDown;
+    [[FoursquareService sharedService] saveChanges];
 }
 
 - (void)addReview
