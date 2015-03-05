@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 Fueled. All rights reserved.
 //
 
+#import "FoursquareService.h"
 #import "Venue.h"
 #import "VenueCategory.h"
 #import "VenueCell.h"
@@ -28,34 +29,48 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
-    RAC(self.nameLabel, text) = RACObserve(self, viewModel.name);
-    RAC(self.ratingLabel, text) = [RACObserve(self, viewModel.rating) map:^NSString *(NSNumber *value) {
-        NSNumberFormatter *nf = [[NSNumberFormatter alloc] init];
-        nf.numberStyle = NSNumberFormatterDecimalStyle;
-        nf.usesSignificantDigits = YES;
-        nf.minimumSignificantDigits = 2;
-        nf.maximumSignificantDigits = 2;
-        return [nf stringFromNumber:value];
-    }];
-    RAC(self.ratingLabel, textColor) = [RACObserve(self, viewModel.ratingColor) map:^UIColor *(NSString *value) {
-        return [UIColor etr_colorWithHexString:value];
-    }];
-    RAC(self.isOpenLabel, text) = RACObserve(self, viewModel.isOpenStatus);
-    RAC(self.isOpenLabel, textColor) = [RACObserve(self, viewModel.isOpen) map:^UIColor *(NSNumber *value) {
-        return value.boolValue ? [UIColor blackColor] : [UIColor redColor];
-    }];
-    RACSignal *categories = RACObserve(self, viewModel.categories);
-    RAC(self.categoriesLabel, text) = [categories map:^NSString *(NSSet *value)
-    {
-        NSArray *sortedNames = [[value sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]]] etr_map:^NSString *(VenueCategory *obj) { return obj.name; }];
-        return [sortedNames componentsJoinedByString:@", "];
-    }];
-    RACSignal *categoryIconURLs = [categories map:^NSURL *(NSSet *value) {
-        VenueCategory *category = value.anyObject;
-        return category.iconURL;
-    }];
-    RACSignal *placeholderIcon = [RACSignal return:[UIImage imageNamed:@"categoryPlaceholder"]];
-    [self.categoryIcon rac_liftSelector:@selector(setImageWithURL:placeholderImage:) withSignals:categoryIconURLs, placeholderIcon, nil];
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    [nc addObserver:self
+           selector:@selector(updateViews)
+               name:NSManagedObjectContextDidSaveNotification
+             object:[FoursquareService sharedService].mainMOC];
+}
+
+- (void)dealloc
+{
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    [nc removeObserver:self
+                  name:NSManagedObjectContextDidSaveNotification
+                object:[FoursquareService sharedService].mainMOC];
+}
+
+- (void)setViewModel:(Venue *)viewModel
+{
+    [super setViewModel:viewModel];
+    [self updateViews];
+}
+
+- (void)updateViews
+{
+    if (!self.viewModel)
+        return;
+    self.nameLabel.text = self.viewModel.name;
+    NSNumberFormatter *nf = [[NSNumberFormatter alloc] init];
+    nf.numberStyle = NSNumberFormatterDecimalStyle;
+    nf.usesSignificantDigits = YES;
+    nf.minimumSignificantDigits = 2;
+    nf.maximumSignificantDigits = 2;
+    self.ratingLabel.text = [nf stringFromNumber:@(self.viewModel.rating)];
+    self.ratingLabel.textColor = [UIColor etr_colorWithHexString:self.viewModel.ratingColor];
+    self.isOpenLabel.text = self.viewModel.isOpenStatus;
+    self.isOpenLabel.textColor = self.viewModel.isOpen ? [UIColor blackColor] : [UIColor redColor];
+    NSArray *sortedCategories = [self.viewModel.categories sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]]];
+    NSArray *sortedNames = [sortedCategories etr_map:^NSString *(VenueCategory *obj) { return obj.name; }];
+    self.categoriesLabel.text = [sortedNames componentsJoinedByString:@", "];
+    VenueCategory *category = self.viewModel.categories.anyObject;
+    UIImage *placeholderIcon = [UIImage imageNamed:@"categoryPlaceholder"];
+    [self.categoryIcon setImageWithURL:category.iconURL
+                      placeholderImage:placeholderIcon];
 }
 
 + (NSString *)reuseIdentifier
