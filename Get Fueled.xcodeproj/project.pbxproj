@@ -12,7 +12,6 @@
 		E86B960E1AA3097600CDE27F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E86B960D1AA3097600CDE27F /* AppDelegate.m */; };
 		E86B96141AA3097600CDE27F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E86B96121AA3097600CDE27F /* Main.storyboard */; };
 		E86B96161AA3097600CDE27F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E86B96151AA3097600CDE27F /* Images.xcassets */; };
-		E86B96191AA3097600CDE27F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E86B96171AA3097600CDE27F /* LaunchScreen.xib */; };
 		E86B96311AA312EB00CDE27F /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E86B962F1AA312EB00CDE27F /* Model.xcdatamodeld */; };
 		E86B96381AA313CB00CDE27F /* FoursquareService.m in Sources */ = {isa = PBXBuildFile; fileRef = E86B96371AA313CB00CDE27F /* FoursquareService.m */; };
 		E86B963B1AA31BA400CDE27F /* FoursquareResponseGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = E86B963A1AA31BA400CDE27F /* FoursquareResponseGroup.m */; };
@@ -58,7 +57,6 @@
 		E86B960D1AA3097600CDE27F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		E86B96131AA3097600CDE27F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E86B96151AA3097600CDE27F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		E86B96181AA3097600CDE27F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		E86B96301AA312EB00CDE27F /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		E86B96361AA313CB00CDE27F /* FoursquareService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoursquareService.h; sourceTree = "<group>"; };
 		E86B96371AA313CB00CDE27F /* FoursquareService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoursquareService.m; sourceTree = "<group>"; };
@@ -231,7 +229,6 @@
 		E86B963F1AA31E9E00CDE27F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E86B96171AA3097600CDE27F /* LaunchScreen.xib */,
 				E8BA90E51AA7281000923EBC /* Main-pad.storyboard */,
 				E86B96121AA3097600CDE27F /* Main.storyboard */,
 				E8BA90EB1AA730C500923EBC /* SplitViewController.h */,
@@ -356,7 +353,6 @@
 				E8BA90E61AA7281000923EBC /* Main-pad.storyboard in Resources */,
 				E86B96141AA3097600CDE27F /* Main.storyboard in Resources */,
 				E86B96711AA440AF00CDE27F /* VenueCell.xib in Resources */,
-				E86B96191AA3097600CDE27F /* LaunchScreen.xib in Resources */,
 				E86B96161AA3097600CDE27F /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -445,15 +441,6 @@
 				E86B96131AA3097600CDE27F /* Base */,
 			);
 			name = Main.storyboard;
-			path = ..;
-			sourceTree = "<group>";
-		};
-		E86B96171AA3097600CDE27F /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E86B96181AA3097600CDE27F /* Base */,
-			);
-			name = LaunchScreen.xib;
 			path = ..;
 			sourceTree = "<group>";
 		};
