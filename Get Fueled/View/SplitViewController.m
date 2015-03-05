@@ -30,8 +30,10 @@
         self.venuesVC.delegate = self;
     } else if ([segue.identifier isEqualToString:@"EmbedDetails"]) {
         UINavigationController *nc = segue.destinationViewController;
-        self.detailsVC = nc.viewControllers.firstObject;
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"VenueDetailsTableViewController" bundle:nil];
+        self.detailsVC = [sb instantiateInitialViewController];
         self.detailsVC.viewModel = [[VenueDetailsTableViewModel alloc] initWithVenue:nil];
+        nc.viewControllers = @[self.detailsVC];
     }
 }
 

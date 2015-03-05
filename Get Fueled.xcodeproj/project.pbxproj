@@ -38,6 +38,7 @@
 		E8BA90E61AA7281000923EBC /* Main-pad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8BA90E51AA7281000923EBC /* Main-pad.storyboard */; };
 		E8BA90EA1AA7304000923EBC /* VenueDetailsPush.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BA90E91AA7304000923EBC /* VenueDetailsPush.m */; };
 		E8BA90ED1AA730C500923EBC /* SplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BA90EC1AA730C500923EBC /* SplitViewController.m */; };
+		E8BA90F91AA84BE100923EBC /* VenueDetailsTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8BA90F81AA84BE100923EBC /* VenueDetailsTableViewController.storyboard */; };
 		E8CD44061AA44B3300589B19 /* VenueCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CD44051AA44B3300589B19 /* VenueCategory.m */; };
 		E8CD44091AA47FD200589B19 /* VenuePhotosGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CD44081AA47FD200589B19 /* VenuePhotosGroup.m */; };
 		E8CD440C1AA47FD200589B19 /* VenuePhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CD440B1AA47FD200589B19 /* VenuePhoto.m */; };
@@ -107,6 +108,7 @@
 		E8BA90E91AA7304000923EBC /* VenueDetailsPush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueDetailsPush.m; sourceTree = "<group>"; };
 		E8BA90EB1AA730C500923EBC /* SplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplitViewController.h; sourceTree = "<group>"; };
 		E8BA90EC1AA730C500923EBC /* SplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplitViewController.m; sourceTree = "<group>"; };
+		E8BA90F81AA84BE100923EBC /* VenueDetailsTableViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = VenueDetailsTableViewController.storyboard; sourceTree = "<group>"; };
 		E8CD44041AA44B3300589B19 /* VenueCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueCategory.h; sourceTree = "<group>"; };
 		E8CD44051AA44B3300589B19 /* VenueCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueCategory.m; sourceTree = "<group>"; };
 		E8CD44071AA47FD200589B19 /* VenuePhotosGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenuePhotosGroup.h; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 				E86B96561AA3568100CDE27F /* VenueDetailsOverviewCellModel.m */,
 				E86B964C1AA3561400CDE27F /* VenueDetailsTableViewController.h */,
 				E86B964D1AA3561400CDE27F /* VenueDetailsTableViewController.m */,
+				E8BA90F81AA84BE100923EBC /* VenueDetailsTableViewController.storyboard */,
 				E86B96521AA3566100CDE27F /* VenueDetailsTableViewModel.h */,
 				E86B96531AA3566100CDE27F /* VenueDetailsTableViewModel.m */,
 			);
@@ -352,6 +355,7 @@
 			files = (
 				E8BA90E61AA7281000923EBC /* Main-pad.storyboard in Resources */,
 				E86B96141AA3097600CDE27F /* Main.storyboard in Resources */,
+				E8BA90F91AA84BE100923EBC /* VenueDetailsTableViewController.storyboard in Resources */,
 				E86B96711AA440AF00CDE27F /* VenueCell.xib in Resources */,
 				E86B96161AA3097600CDE27F /* Images.xcassets in Resources */,
 			);

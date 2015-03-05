@@ -18,6 +18,12 @@
 #define COCOAPODS_VERSION_MINOR_ETRCollectionModel 1
 #define COCOAPODS_VERSION_PATCH_ETRCollectionModel 0
 
+// ETRStoryboardLink
+#define COCOAPODS_POD_AVAILABLE_ETRStoryboardLink
+#define COCOAPODS_VERSION_MAJOR_ETRStoryboardLink 0
+#define COCOAPODS_VERSION_MINOR_ETRStoryboardLink 1
+#define COCOAPODS_VERSION_PATCH_ETRStoryboardLink 0
+
 // ETRUtils
 #define COCOAPODS_POD_AVAILABLE_ETRUtils
 #define COCOAPODS_VERSION_MAJOR_ETRUtils 0
