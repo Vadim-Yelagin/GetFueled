@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+@class VenueCategory;
 
 @interface Venue : NSManagedObject
 
@@ -30,5 +31,8 @@
 @property (nonatomic, retain) NSSet *reviews;
 @property (nonatomic, retain) NSSet *categories;
 @property (nonatomic, retain) NSSet *photosGroups;
+
+- (NSString *)categoryNames;
+- (VenueCategory *)firstCategory;
 
 @end

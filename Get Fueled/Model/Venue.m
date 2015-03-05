@@ -7,7 +7,8 @@
 //
 
 #import "Venue.h"
-
+#import "VenueCategory.h"
+#import <ETRUtils/ETRUtils.h>
 
 @implementation Venue
 
@@ -29,5 +30,21 @@
 @dynamic reviews;
 @dynamic categories;
 @dynamic photosGroups;
+
+- (NSArray *)sortedCategories
+{
+    return [self.categories sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]]];
+}
+
+- (NSString *)categoryNames
+{
+    NSArray *sortedNames = [[self sortedCategories] etr_map:^NSString *(VenueCategory *obj) { return obj.name; }];
+    return [sortedNames componentsJoinedByString:@", "];
+}
+
+- (VenueCategory *)firstCategory
+{
+    return [self sortedCategories].firstObject;
+}
 
 @end

@@ -28,22 +28,14 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
-    RAC(self.nameLabel, text) = RACObserve(self, viewModel.venue.name);
-    
-    RACSignal *categories = RACObserve(self, viewModel.venue.categories);
-    RAC(self.categoriesLabel, text) = [categories map:^NSString *(NSSet *value) {
-        NSArray *sortedNames = [[value sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]]] etr_map:^NSString *(VenueCategory *obj) { return obj.name; }];
-        return [sortedNames componentsJoinedByString:@", "];
-    }];
+    RAC(self.nameLabel, text) = RACObserve(self, viewModel.name);
+    RAC(self.categoriesLabel, text) = RACObserve(self, viewModel.categories);
     
     RACSignal *photoURLs = RACObserve(self, viewModel.photoURL);
     RACSignal *placeholderPhoto = [RACSignal return:[UIImage etr_imageWithColor:[UIColor grayColor] size:CGSizeMake(1, 1)]];
     [self.photoView rac_liftSelector:@selector(setImageWithURL:placeholderImage:) withSignals:photoURLs, placeholderPhoto, nil];
     
-    RACSignal *categoryIconURLs = [categories map:^NSURL *(NSSet *value) {
-        VenueCategory *category = value.anyObject;
-        return category.whiteIconURL;
-    }];
+    RACSignal *categoryIconURLs = RACObserve(self, viewModel.categoryIconURL);
     RACSignal *placeholderIcon = [RACSignal return:[UIImage etr_imageWithColor:[UIColor clearColor] size:CGSizeMake(1, 1)]];
     [self.categoryIcon rac_liftSelector:@selector(setImageWithURL:placeholderImage:) withSignals:categoryIconURLs, placeholderIcon, nil];
 }

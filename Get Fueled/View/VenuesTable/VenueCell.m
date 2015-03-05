@@ -64,10 +64,8 @@
     self.ratingLabel.textColor = [UIColor etr_colorWithHexString:self.viewModel.ratingColor];
     self.isOpenLabel.text = self.viewModel.isOpenStatus;
     self.isOpenLabel.textColor = self.viewModel.isOpen ? [UIColor blackColor] : [UIColor redColor];
-    NSArray *sortedCategories = [self.viewModel.categories sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]]];
-    NSArray *sortedNames = [sortedCategories etr_map:^NSString *(VenueCategory *obj) { return obj.name; }];
-    self.categoriesLabel.text = [sortedNames componentsJoinedByString:@", "];
-    VenueCategory *category = self.viewModel.categories.anyObject;
+    self.categoriesLabel.text = [self.viewModel categoryNames];
+    VenueCategory *category = [self.viewModel firstCategory];
     UIImage *placeholderIcon = [UIImage imageNamed:@"categoryPlaceholder"];
     [self.categoryIcon setImageWithURL:category.iconURL
                       placeholderImage:placeholderIcon];
