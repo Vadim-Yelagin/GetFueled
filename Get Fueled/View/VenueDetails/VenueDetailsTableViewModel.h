@@ -13,6 +13,7 @@
 @interface VenueDetailsTableViewModel : ETROuterUnionCollectionModel
 
 @property (nonatomic, readonly, strong) Venue* venue;
+@property (nonatomic, readonly, strong) id noContentItem;
 
 - (instancetype)initWithVenue:(Venue *)venue;
 

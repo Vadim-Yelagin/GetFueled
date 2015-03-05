@@ -301,6 +301,23 @@
                                     <outlet property="mapView" destination="C1l-j1-Ssz" id="b39-i4-KpL"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="NoContentCell" rowHeight="246" id="n12-kS-ZlV" customClass="ETRTableViewCell">
+                                <rect key="frame" x="0.0" y="0.0" width="447" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="n12-kS-ZlV" id="GSW-wb-Bct">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noContent" translatesAutoresizingMaskIntoConstraints="NO" id="nlN-7o-cdA">
+                                            <rect key="frame" x="74" y="-28" width="300" height="301"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="centerY" secondItem="nlN-7o-cdA" secondAttribute="centerY" id="HI6-vJ-cS4"/>
+                                        <constraint firstAttribute="centerX" secondItem="nlN-7o-cdA" secondAttribute="centerX" id="deH-lg-ipd"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <inset key="separatorInset" minX="9999" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="9t0-F8-UTE" id="NYr-FJ-K4m"/>
@@ -311,7 +328,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fl8-c5-TWm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="342.5" y="1349"/>
+            <point key="canvasLocation" x="342.5" y="1348"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="pQv-0x-Qbs">
@@ -373,6 +390,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="noContent" width="300" height="300"/>
         <image name="shades" width="1" height="256"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

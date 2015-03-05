@@ -31,6 +31,16 @@
 
 - (instancetype)initWithVenue:(Venue *)venue
 {
+    if (!venue) {
+        ETRStaticCellModel *noContentCell = [[ETRStaticCellModel alloc] initWithReuseIdentifier:@"NoContentCell"];
+        ETRStaticCollectionModel *noContent = [[ETRStaticCollectionModel alloc] initWithSections:@[@[noContentCell]]];
+        self = [super initWithCollections:@[noContent]];
+        if (self) {
+            _noContentItem = noContentCell;
+        }
+        return self;
+    }
+    
     VenueDetailsOverviewCellModel *overview = [[VenueDetailsOverviewCellModel alloc] initWithVenue:venue];
 
     MapCellModel *map = [[MapCellModel alloc] init];

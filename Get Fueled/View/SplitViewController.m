@@ -31,6 +31,7 @@
     } else if ([segue.identifier isEqualToString:@"EmbedDetails"]) {
         UINavigationController *nc = segue.destinationViewController;
         self.detailsVC = nc.viewControllers.firstObject;
+        self.detailsVC.viewModel = [[VenueDetailsTableViewModel alloc] initWithVenue:nil];
     }
 }
 

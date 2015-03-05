@@ -30,6 +30,9 @@
     if ([item isKindOfClass:[ButtonCellModel class]]) {
         return 44;
     }
+    if (item == self.viewModel.noContentItem) {
+        return self.tableView.bounds.size.height - self.tableView.scrollIndicatorInsets.top;
+    }
     return ETRDynamicRowHeight;
 }
 
