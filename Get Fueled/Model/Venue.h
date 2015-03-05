@@ -34,5 +34,6 @@
 
 - (NSString *)categoryNames;
 - (VenueCategory *)firstCategory;
+@property (nonatomic, readonly, copy) NSString *formattedRating;
 
 @end

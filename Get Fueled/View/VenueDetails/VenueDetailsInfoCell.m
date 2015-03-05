@@ -25,14 +25,7 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
-    RAC(self.ratingLabel, text) = [RACObserve(self, viewModel.venue.rating) map:^NSString *(NSNumber *value) {
-        NSNumberFormatter *nf = [[NSNumberFormatter alloc] init];
-        nf.numberStyle = NSNumberFormatterDecimalStyle;
-        nf.usesSignificantDigits = YES;
-        nf.minimumSignificantDigits = 2;
-        nf.maximumSignificantDigits = 2;
-        return [nf stringFromNumber:value];
-    }];
+    RAC(self.ratingLabel, text) = RACObserve(self, viewModel.venue.formattedRating);
     RAC(self.ratingLabel, textColor) = [RACObserve(self, viewModel.venue.ratingColor) map:^UIColor *(NSString *value) {
         return [UIColor etr_colorWithHexString:value];
     }];

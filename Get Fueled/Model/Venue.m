@@ -47,4 +47,19 @@
     return [self sortedCategories].firstObject;
 }
 
+- (NSString *)formattedRating
+{
+    NSNumberFormatter *nf = [[NSNumberFormatter alloc] init];
+    nf.numberStyle = NSNumberFormatterDecimalStyle;
+    nf.usesSignificantDigits = YES;
+    nf.minimumSignificantDigits = 2;
+    nf.maximumSignificantDigits = 2;
+    return [nf stringFromNumber:@(self.rating)];
+}
+
++ (NSSet *)keyPathsForValuesAffectingFormattedRating
+{
+    return [NSSet setWithObject:@"rating"];
+}
+
 @end

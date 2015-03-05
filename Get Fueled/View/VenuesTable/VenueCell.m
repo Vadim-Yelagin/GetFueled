@@ -55,12 +55,7 @@
     if (!self.viewModel)
         return;
     self.nameLabel.text = self.viewModel.name;
-    NSNumberFormatter *nf = [[NSNumberFormatter alloc] init];
-    nf.numberStyle = NSNumberFormatterDecimalStyle;
-    nf.usesSignificantDigits = YES;
-    nf.minimumSignificantDigits = 2;
-    nf.maximumSignificantDigits = 2;
-    self.ratingLabel.text = [nf stringFromNumber:@(self.viewModel.rating)];
+    self.ratingLabel.text = self.viewModel.formattedRating;
     self.ratingLabel.textColor = [UIColor etr_colorWithHexString:self.viewModel.ratingColor];
     self.isOpenLabel.text = self.viewModel.isOpenStatus;
     self.isOpenLabel.textColor = self.viewModel.isOpen ? [UIColor blackColor] : [UIColor redColor];
