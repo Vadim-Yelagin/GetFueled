@@ -28,7 +28,7 @@
         return MIN(height, round(self.tableView.bounds.size.height / 2));
     }
     if ([item isKindOfClass:[ButtonCellModel class]]) {
-        return 44;
+        return 46;
     }
     if (item == self.viewModel.noContentItem) {
         return self.tableView.bounds.size.height - self.tableView.scrollIndicatorInsets.top;
