@@ -20,7 +20,8 @@
     NSManagedObjectContext *moc = [FoursquareService sharedService].mainMOC;
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Venue"];
     request.predicate = [NSPredicate predicateWithFormat:@"actual == YES && thumbsDown == NO"];
-    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"distance" ascending:YES]];
+    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"distance" ascending:YES],
+                                [NSSortDescriptor sortDescriptorWithKey:@"identifier" ascending:YES]];
     self = [super initWithFetchRequest:request
                   managedObjectContext:moc
                     sectionNameKeyPath:nil
