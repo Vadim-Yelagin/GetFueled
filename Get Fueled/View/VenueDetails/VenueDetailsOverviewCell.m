@@ -31,13 +31,14 @@
     RAC(self.nameLabel, text) = RACObserve(self, viewModel.name);
     RAC(self.categoriesLabel, text) = RACObserve(self, viewModel.categories);
     
+    UIImage *clearImage = [UIImage imageNamed:@"clear"];
+    RACSignal *placeholder = [RACSignal return:clearImage];
+    
     RACSignal *photoURLs = RACObserve(self, viewModel.photoURL);
-    RACSignal *placeholderPhoto = [RACSignal return:[UIImage etr_imageWithColor:[UIColor grayColor] size:CGSizeMake(1, 1)]];
-    [self.photoView rac_liftSelector:@selector(setImageWithURL:placeholderImage:) withSignals:photoURLs, placeholderPhoto, nil];
+    [self.photoView rac_liftSelector:@selector(setImageWithURL:placeholderImage:) withSignals:photoURLs, placeholder, nil];
     
     RACSignal *categoryIconURLs = RACObserve(self, viewModel.categoryIconURL);
-    RACSignal *placeholderIcon = [RACSignal return:[UIImage etr_imageWithColor:[UIColor clearColor] size:CGSizeMake(1, 1)]];
-    [self.categoryIcon rac_liftSelector:@selector(setImageWithURL:placeholderImage:) withSignals:categoryIconURLs, placeholderIcon, nil];
+    [self.categoryIcon rac_liftSelector:@selector(setImageWithURL:placeholderImage:) withSignals:categoryIconURLs, placeholder, nil];
 }
 
 @end
