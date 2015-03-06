@@ -11,7 +11,7 @@
 #import "MapCellModel.h"
 #import <MapKit/MapKit.h>
 
-@interface MapCell ()
+@interface MapCell () <MKMapViewDelegate>
 
 @property (nonatomic, strong) IBOutlet MKMapView *mapView;
 @property (nonatomic, strong) MKPointAnnotation *fueledAnnotation;
@@ -41,6 +41,19 @@
     [self.mapView addAnnotation:self.fueledAnnotation];
     [self.mapView showAnnotations:self.mapView.annotations
                          animated:NO];
+}
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView
+            viewForAnnotation:(id<MKAnnotation>)annotation
+{
+    if ([annotation isKindOfClass:[MKUserLocation class]])
+        return nil;
+    MKAnnotationView* pinView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:nil];
+    pinView.image = (annotation == self.fueledAnnotation)
+                  ? [UIImage imageNamed:@"fueledAnnotation"]
+                  : [UIImage imageNamed:@"venueAnnotation"];
+    pinView.centerOffset = CGPointMake(0, -pinView.image.size.height/2);
+    return pinView;
 }
 
 @end
