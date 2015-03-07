@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="nTs-72-EgX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="DZX-BR-h7e">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
@@ -32,6 +32,38 @@
                 <customObject id="sdF-YL-Y37" customClass="VenueDetailsPush"/>
             </objects>
             <point key="canvasLocation" x="387" y="179"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="gDx-GP-sKX">
+            <objects>
+                <viewController id="DZX-BR-h7e" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="l4Y-JM-aCY"/>
+                        <viewControllerLayoutGuide type="bottom" id="aeW-ok-GXo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dhF-dx-OOi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k79-VI-brm">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <connections>
+                                    <segue destination="nTs-72-EgX" kind="embed" id="fYV-us-V74"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="k79-VI-brm" firstAttribute="top" secondItem="dhF-dx-OOi" secondAttribute="top" id="0yE-7Z-AfQ"/>
+                            <constraint firstItem="k79-VI-brm" firstAttribute="leading" secondItem="dhF-dx-OOi" secondAttribute="leading" id="HQo-Wt-0cT"/>
+                            <constraint firstItem="aeW-ok-GXo" firstAttribute="top" secondItem="k79-VI-brm" secondAttribute="bottom" id="JZV-C3-u3j"/>
+                            <constraint firstAttribute="trailing" secondItem="k79-VI-brm" secondAttribute="trailing" id="Kin-Ch-kAK"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2aa-Nq-Ktk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-420" y="179"/>
         </scene>
         <!--Storyboard Link - Venue Details-->
         <scene sceneID="5I5-2x-ksp">
